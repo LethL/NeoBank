@@ -1,0 +1,9 @@
+.map {
+  padding-top: 48px;
+  text-align: center;
+}
+
+.map__text {
+  margin: 8px 0 48px 0;
+  line-height: 50px;
+}
