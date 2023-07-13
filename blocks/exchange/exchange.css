@@ -1,0 +1,72 @@
+.exchange {
+  padding-top: 48px;
+}
+
+.exchange__wrapper {
+  padding: 32px;
+  background: linear-gradient(
+      358.2deg,
+      rgba(178, 178, 178, 0.8) 8.06%,
+      rgba(178, 178, 178, 0) 67.93%
+    ),
+    linear-gradient(0deg, rgba(244, 244, 244, 0.9), rgba(244, 244, 244, 0.9));
+  border-radius: 28px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.exchange__currency {
+  margin: 24px 0 0 0;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+.exchange__rate {
+  margin-top: 32px;
+  max-width: 409px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 32px;
+  grid-column-gap: 32px;
+}
+
+.exchange__rate-item {
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22.4px;
+  color: #808080;
+}
+
+.exchange__rate-item_black {
+  margin-left: 20px;
+  color: #000000;
+}
+
+.exchange__link {
+  margin-top: 50px;
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22.4px;
+  transition: color 0.2s linear;
+}
+
+.exchange__link:hover {
+  color: var(--pink-color);
+}
+
+.exchange__info-text {
+  margin: 0;
+  line-height: 50px;
+  color: #000000;
+}
+
+.exchange__img {
+  position: absolute;
+  right: 32px;
+  top: 161px;
+}
