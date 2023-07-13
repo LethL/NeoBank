@@ -1,0 +1,13 @@
+.link-button {
+  background-color: var(--blue-color);
+  border-radius: 16px;
+  padding: 16px;
+  color: var(--white-color);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s linear;
+}
+
+.link-button:hover {
+  background-color: var(--pink-color);
+}
