@@ -2,13 +2,14 @@
   --main-text-color: #1c1c1e;
   --blue-color: #003cff;
   --white-color: #ffffff;
+  --black-color: #000000;
   --pink-color: #b4387a;
   --second-font-family: "Rubik", sans-serif;
 }
 
 .page {
-  max-width: 1300px;
-  margin: 0 auto;
+  /* max-width: 1300px;
+  margin: 0 auto; */
   background-color: #f5f4ff;
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
