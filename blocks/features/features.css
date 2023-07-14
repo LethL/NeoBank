@@ -49,3 +49,47 @@
   line-height: 30px;
   font-weight: 400;
 }
+
+@media screen and (max-width: 1300px) {
+  .features__title {
+    max-width: 400px;
+  }
+
+  .features__text {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .features {
+    padding-top: 32px;
+    flex-direction: column-reverse;
+  }
+
+  .features__info {
+    margin: 0 auto;
+  }
+
+  .features__title {
+    max-width: 100%;
+  }
+
+  .features__text {
+    max-width: 100%;
+  }
+
+  .features__img {
+    max-height: 400px;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .features__title {
+    text-align: center;
+  }
+
+  .features__text {
+    text-align: center;
+  }
+}

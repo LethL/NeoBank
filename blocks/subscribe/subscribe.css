@@ -75,3 +75,27 @@
 .subscribe__form-btn-img {
   margin-right: 10px;
 }
+
+@media screen and (max-width: 920px) {
+  .subscribe__form {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .subscribe {
+    padding: 32px 0;
+  }
+
+  .subscribe__form {
+    flex-direction: column;
+  }
+
+  .subscribe__form-btn {
+    margin-top: 10px;
+  }
+
+  .subscribe__title {
+    text-align: center;
+  }
+}

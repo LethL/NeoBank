@@ -80,3 +80,28 @@
   margin-top: 32px;
   letter-spacing: 0.2;
 }
+
+@media screen and (max-width: 560px) {
+  .footer {
+    padding: 32px 0;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__contacts {
+    margin-top: 10px;
+  }
+
+  .footer__links {
+    justify-content: center;
+  }
+
+  .footer__text {
+    text-align: center;
+  }
+}

@@ -70,3 +70,34 @@
   right: 32px;
   top: 161px;
 }
+
+@media screen and (max-width: 920px) {
+  .exchange__wrapper {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .exchange__img {
+    display: none;
+  }
+
+  .exchange__rate {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .exchange {
+    padding-top: 32px;
+  }
+
+  .exchange__rate-item_black {
+    margin-left: 10px;
+  }
+
+  .exchange__rate {
+    grid-column-gap: 0px;
+    align-self: center;
+  }
+}

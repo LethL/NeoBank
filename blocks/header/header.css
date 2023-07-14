@@ -33,3 +33,9 @@
 .header__nav-item:hover {
   color: var(--pink-color);
 }
+
+@media screen and (max-width: 920px) {
+  .header__nav {
+    display: none;
+  }
+}
