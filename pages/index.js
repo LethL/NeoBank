@@ -6,7 +6,7 @@ import Section from "../components/Section.js";
 const currencies = ["USD", "EUR", "GBP", "THB", "CAD", "CNH"];
 const mainCurrency = "RUB";
 
-async function getCurrencies() {
+async function setCurrencies() {
   currencies.forEach((currency) => {
     const currencySelector = document.querySelector(
       `#${currency.toLowerCase()}`
@@ -30,12 +30,12 @@ async function getCurrencies() {
   });
 }
 
-getCurrencies();
-setInterval(getCurrencies, 900000);
+setCurrencies();
+setInterval(setCurrencies, 900000);
 
 // get news
 
-const newApiKey = "96da7fbe43e546f1941cae7b7a5fb5e7";
+const newsApiKey = "96da7fbe43e546f1941cae7b7a5fb5e7";
 
 function createCard(data) {
   const card = new Card(
@@ -57,11 +57,11 @@ const cardList = new Section(
   ".swiper-wrapper"
 );
 
-fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${newApiKey}`, {
+fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`, {
   method: "GET",
   headers: {
-    "X-Api-Key": newApiKey,
-    Authorization: newApiKey,
+    "X-Api-Key": newsApiKey,
+    Authorization: newsApiKey,
   },
 })
   .then((res) => (res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`)))
