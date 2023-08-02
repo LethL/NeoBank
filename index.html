@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NeoBank</title>
     <link rel="stylesheet" href="pages/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
   </head>
   <body class="page">
     <div class="section-wrapper">
@@ -23,7 +27,6 @@
       <main>
         <section class="intro">
           <div class="intro__info">
-            <!-- Может было бы уместней использовать тут h2, тк не уверен что это именно нужный заголовок для SEO -->
             <h1 class="intro__title">
               Choose the design you like and apply for card right now
             </h1>
@@ -91,37 +94,43 @@
                 <p class="exchange__rate-item">
                   USD:<span
                     class="exchange__rate-item exchange__rate-item_black"
-                    >60.78</span
+                    id="usd"
+                    >load</span
                   >
                 </p>
                 <p class="exchange__rate-item">
-                  CNY:<span
+                  EUR:<span
                     class="exchange__rate-item exchange__rate-item_black"
-                    >9.08</span
+                    id="eur"
+                    >load</span
                   >
                 </p>
                 <p class="exchange__rate-item">
-                  CHF:<span
+                  GBP:<span
                     class="exchange__rate-item exchange__rate-item_black"
-                    >64.78</span
+                    id="gbp"
+                    >load</span
                   >
                 </p>
                 <p class="exchange__rate-item">
-                  USD:<span
+                  THB:<span
                     class="exchange__rate-item exchange__rate-item_black"
-                    >60.78</span
+                    id="thb"
+                    >load</span
                   >
                 </p>
                 <p class="exchange__rate-item">
-                  JPY:<span
+                  CAD:<span
                     class="exchange__rate-item exchange__rate-item_black"
-                    >0.46</span
+                    id="cad"
+                    >load</span
                   >
                 </p>
                 <p class="exchange__rate-item">
-                  TRY:<span
+                  CNH:<span
                     class="exchange__rate-item exchange__rate-item_black"
-                    >3.39</span
+                    id="cnh"
+                    >load</span
                   >
                 </p>
               </div>
@@ -146,8 +155,33 @@
           <p class="map__text">
             Withdraw and transfer money online through our application
           </p>
-          <!-- Тут пока не стал верстать активные точки на карте пока в ручную, пока не ясен функционал, возможно сразу на реакте сделать можно будет -->
           <img class="map__img" src="./images/map.png" alt="map image" />
+        </section>
+        <section class="news">
+          <h2 class="section-title">Current news from the world of finance</h2>
+          <p class="map__text">
+            We update the news feed every 15 minutes. You can learn more by
+            clicking on the news you are interested in.
+          </p>
+          <div class="swiper">
+            <ul class="swiper-wrapper">
+              <template id="template">
+                <li class="swiper-slide">
+                  <div class="swiper-slide__wrapper">
+                    <a class="element" href="#" target="_blank">
+                      <img class="element__image" alt="img" />
+                      <div class="element__info">
+                        <h2 class="element__title"></h2>
+                        <p class="element__description"></p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              </template>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </section>
         <section class="subscribe">
           <a href="#" target="_blank" class="subscribe__link">Support</a>
@@ -238,5 +272,7 @@
         </p>
       </div>
     </footer>
+    <script type="module" src="./pages/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </body>
 </html>
