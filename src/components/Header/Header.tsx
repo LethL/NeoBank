@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import LinkButton from "../LinkButton/LinkButton";
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
       <nav>
         <ul className="header__nav">
           <li>
-            <a className="header__nav-item" href="#">
+            <a className="header__nav-item" href="/loan">
               Credit card
             </a>
           </li>
@@ -31,9 +32,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <a href="#" className="link-button">
-        Online Bank
-      </a>
+      <LinkButton text="Online Bank" link="/" />
     </header>
   );
 }

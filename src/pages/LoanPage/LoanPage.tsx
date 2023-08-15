@@ -1,9 +1,10 @@
 import React from "react";
+import Loan from "../../components/Loan/Loan";
 
 export default function LoanPage() {
   return (
-    <div>
-      <p>LoanPage LoanPage</p>
-    </div>
+    <main>
+      <Loan />
+    </main>
   );
 }
