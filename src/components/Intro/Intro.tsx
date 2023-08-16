@@ -13,7 +13,7 @@ export default function Intro() {
         <h1 className="intro__title">
           Choose the design you like and apply for card right now
         </h1>
-        <LinkButton text="Choose the card" link="#" />
+        <LinkButton text="Choose the card" link="/loan" />
       </div>
       <div className="intro__cards-wrapper">
         <img className="intro__card" src={card1} alt="credit card image" />
