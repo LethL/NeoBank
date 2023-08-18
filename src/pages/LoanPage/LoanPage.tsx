@@ -1,7 +1,8 @@
-import React from "react";
-import Loan from "../../components/Loan/Loan";
-import Tabs from "../../components/Tabs/Tabs";
-import Divider from "../../components/Divider/Divider";
+import React from 'react';
+import Loan from '../../components/Loan/Loan';
+import Tabs from '../../components/Tabs/Tabs';
+import Divider from '../../components/Divider/Divider';
+import LoanForm from '../../modules/LoanForm/LoanForm.module';
 
 export default function LoanPage() {
   return (
@@ -9,6 +10,7 @@ export default function LoanPage() {
       <Loan />
       <Tabs />
       <Divider />
+      <LoanForm />
     </main>
   );
 }

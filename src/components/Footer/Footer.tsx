@@ -1,6 +1,6 @@
-import React from "react";
-import "./Footer.css";
-import logo from "../../images/logo.svg";
+import React from 'react';
+import './Footer.css';
+import logo from '../../images/logo.svg';
 
 export default function Footer() {
   return (
@@ -9,16 +9,10 @@ export default function Footer() {
         <div className="footer__content">
           <img src={logo} alt="logo" />
           <div>
-            <a
-              className="footer__contacts footer__contacts_phone"
-              href="tel:+74959842513"
-            >
+            <a className="footer__contacts footer__contacts_phone" href="tel:+74959842513">
               +7 (495) 984 25 13
             </a>
-            <a
-              className="footer__contacts footer__contacts_mail"
-              href="mailto:info@neoflex.ru"
-            >
+            <a className="footer__contacts footer__contacts_mail" href="mailto:info@neoflex.ru">
               info@neoflex.ru
             </a>
           </div>
@@ -76,10 +70,9 @@ export default function Footer() {
           </li>
         </ul>
         <p className="footer__text">
-          We use cookies to personalize our services and improve the user
-          experience of our website. Cookies are small files containing
-          information about previous visits to a website. If you do not want to
-          use cookies, please change your browser settings
+          We use cookies to personalize our services and improve the user experience of our website. Cookies are small
+          files containing information about previous visits to a website. If you do not want to use cookies, please
+          change your browser settings
         </p>
       </div>
     </footer>

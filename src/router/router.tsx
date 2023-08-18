@@ -1,8 +1,8 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { PATH_LIST } from "../constants/paths";
-import HomePage from "../pages/HomePage/HomePage";
-import LoanPage from "../pages/LoanPage/LoanPage";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { PATH_LIST } from '../constants/paths';
+import HomePage from '../pages/HomePage/HomePage';
+import LoanPage from '../pages/LoanPage/LoanPage';
 
 export function Router() {
   return (

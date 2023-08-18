@@ -1,6 +1,6 @@
-import React from "react";
-import "./Header.css";
-import LinkButton from "../LinkButton/LinkButton";
+import React from 'react';
+import './Header.css';
+import LinkButton from '../LinkButton/LinkButton';
 
 export default function Header() {
   return (

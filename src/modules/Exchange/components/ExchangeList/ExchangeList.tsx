@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import "./ExchangeList.css";
-import bankLogo from "../../../../images/bank-logo.svg";
-import { CurrenciesEntity } from "../../../../domains/Currencies.entity";
+import React, { useEffect, useState } from 'react';
+import './ExchangeList.css';
+import bankLogo from '../../../../images/bank-logo.svg';
+import { CurrenciesEntity } from '../../../../domains/Currencies.entity';
 
 export default function ExchangeList() {
-  const mainCurrency = "RUB";
+  const mainCurrency = 'RUB';
   const currenciesList: CurrenciesEntity = {
     USD: 0,
     EUR: 0,
@@ -16,22 +16,16 @@ export default function ExchangeList() {
   const [currencies, setCurrencies] = useState({ currenciesList });
 
   useEffect(() => {
-    let tempCurrenciesList: CurrenciesEntity = {};
-    for (let key in currenciesList) {
-      fetch(
-        `https://currency-exchange.p.rapidapi.com/exchange?from=${key}&to=${mainCurrency}&q=1.0`,
-        {
-          method: "GET",
-          headers: {
-            "X-RapidAPI-Key":
-              "fadcacf7femsh373536bc36696e7p191e2ejsn040483fdbe41",
-            "X-RapidAPI-Host": "currency-exchange.p.rapidapi.com",
-          },
-        }
-      )
-        .then((res) =>
-          res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`)
-        )
+    const tempCurrenciesList: CurrenciesEntity = {};
+    for (const key in currenciesList) {
+      fetch(`https://currency-exchange.p.rapidapi.com/exchange?from=${key}&to=${mainCurrency}&q=1.0`, {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': 'fadcacf7femsh373536bc36696e7p191e2ejsn040483fdbe41',
+          'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com',
+        },
+      })
+        .then((res) => (res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`)))
         .then((data) => {
           tempCurrenciesList[key] = data.toFixed(2);
           setCurrencies({ currenciesList: tempCurrenciesList });
@@ -50,10 +44,7 @@ export default function ExchangeList() {
             {Object.keys(currencies.currenciesList).map((currency) => (
               <p className="exchange__rate-item" key={currency}>
                 {currency}:
-                <span
-                  className="exchange__rate-item exchange__rate-item_black"
-                  id="usd"
-                >
+                <span className="exchange__rate-item exchange__rate-item_black" id="usd">
                   {currencies.currenciesList[currency]}
                 </span>
               </p>
@@ -64,9 +55,7 @@ export default function ExchangeList() {
           </a>
         </div>
         <div className="exchange__info">
-          <p className="exchange__info-text">
-            Update every 15 minutes, MSC 09.08.2022
-          </p>
+          <p className="exchange__info-text">Update every 15 minutes, MSC 09.08.2022</p>
           <img className="exchange__img" src={bankLogo} alt="bank image" />
         </div>
       </div>

@@ -1,6 +1,6 @@
-import React from "react";
-import "./Tabs.css";
-import About from "../About/About";
+import React from 'react';
+import './Tabs.css';
+import About from '../About/About';
 
 export default function Tabs() {
   return (
