@@ -1,7 +1,6 @@
 # React neoBank project
 
-npm i --force
-npm run dev - запустить проект
+npm i --force, npm run dev - запустить проект
 
 ## Технологии которые используются в проекте
 

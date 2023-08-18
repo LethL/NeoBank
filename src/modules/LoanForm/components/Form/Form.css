@@ -1,5 +1,6 @@
 .form-section {
   padding-bottom: 96px;
+  text-align: center;
 }
 
 .form {
@@ -54,7 +55,7 @@
 }
 
 .form__amount-sum::after {
-  content: "";
+  content: '';
   display: block;
   height: 1px;
   background: rgba(128, 128, 128, 0.2);
