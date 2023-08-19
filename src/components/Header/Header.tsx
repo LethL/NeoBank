@@ -5,7 +5,7 @@ import LinkButton from '../LinkButton/LinkButton';
 export default function Header() {
   return (
     <header className="header">
-      <a href="#" className="header__logo">
+      <a href="/" className="header__logo">
         NeoBank
       </a>
       <nav>

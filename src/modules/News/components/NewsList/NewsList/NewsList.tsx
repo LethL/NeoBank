@@ -1,12 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './NewsList.css';
-import { NewsEntity } from '../../../../../domains/News.entity';
+import Slider from 'modules/Slider/Slider';
 
 export default function NewsList() {
-  const [news, setNews] = React.useState([]);
+  const [news, setNews] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  function onSlidesShownHandler(): number {
+    if (windowWidth <= 700) {
+      return 1;
+    }
+    if (windowWidth <= 1050) {
+      return 2;
+    } else {
+      return 3;
+    }
+  }
+
   // так не делается, но для проверки не стал создавать .env
   const newsApiKey = '96da7fbe43e546f1941cae7b7a5fb5e7';
-
   useEffect(() => {
     fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`, {
       method: 'GET',
@@ -28,25 +52,7 @@ export default function NewsList() {
       <p className="map__text">
         We update the news feed every 15 minutes. You can learn more by clicking on the news you are interested in.
       </p>
-      <div className="swiper">
-        <ul className="swiper-wrapper">
-          {news.map((item: NewsEntity, i) => (
-            <li className="swiper-slide" key={i}>
-              <div className="swiper-slide__wrapper">
-                <a className="news-element" href={item.url} target="_blank" rel="noreferrer">
-                  <img className="news-element__image" src={item.urlToImage} alt={item.title} />
-                  <div className="news-element__info">
-                    <h2 className="news-element__title">{item.title}</h2>
-                    <p className="news-element__description">{item.description}</p>
-                  </div>
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
-      </div>
+      <Slider items={news} slidesToShow={onSlidesShownHandler()} />
     </section>
   );
 }

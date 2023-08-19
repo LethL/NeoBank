@@ -1,3 +1,3 @@
 export interface NewsEntity {
-    [key: string]: string;
+  [key: string]: string;
 }

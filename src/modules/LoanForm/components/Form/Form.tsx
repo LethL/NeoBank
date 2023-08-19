@@ -17,20 +17,20 @@ import { Loader } from 'components/Loader/Loader';
 export default function Form() {
   // const options: Option[] = [
   //   {
-  //     title: "6 month",
-  //     value: "6 month",
+  //     title: '6 month',
+  //     value: '6 month',
   //   },
   //   {
-  //     title: "12 month",
-  //     value: "12 month",
+  //     title: '12 month',
+  //     value: '12 month',
   //   },
   //   {
-  //     title: "18 month",
-  //     value: "18 month",
+  //     title: '18 month',
+  //     value: '18 month',
   //   },
   //   {
-  //     title: "24 month",
-  //     value: "24 month",
+  //     title: '24 month',
+  //     value: '24 month',
   //   },
   // ];
   const [loading, setLoading] = React.useState(false);
@@ -73,7 +73,7 @@ export default function Form() {
   };
 
   // const onChangeTerm = (value: string) => {
-  //   setValue("term", value);
+  //   setValue('term', value);
   // };
 
   const onSubmit = () => {
@@ -189,20 +189,23 @@ export default function Form() {
               )}
             />
             {/* <Controller
-            control={control}
-            name="term"
-            render={({ field: { value }, fieldState: { error } }) => (
-              <SelectField
-                options={options}
-                label="Select term *"
-                containerClassName="form-item"
-                value={value}
-                labelClassName="form-item__label"
-                selectClassName="form-item__select"
-                onChange={onChangeTerm}
-              />
-            )}
-          /> */}
+              control={control}
+              name="term"
+              render={({ field: { value, onBlur }, fieldState: { error } }) => (
+                <SelectField
+                  options={options}
+                  label="Select term *"
+                  containerClassName="form-item"
+                  value={value}
+                  labelClassName="form-item__label"
+                  selectClassName="form-item__select"
+                  onChange={(value) => {
+                    onChangeTerm(value);
+                    onBlur();
+                  }}
+                />
+              )}
+            /> */}
             <Controller
               control={control}
               name="email"

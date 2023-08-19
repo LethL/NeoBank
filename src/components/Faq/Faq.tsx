@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Faq.css';
 import Accordion from 'components/Accordion/Accordion';
 import { issuingFaqAccorions, usingFaqAccorions } from '__mocks__/FaqAccordions.mock';

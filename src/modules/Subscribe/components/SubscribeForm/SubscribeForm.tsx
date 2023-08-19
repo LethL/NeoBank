@@ -2,13 +2,19 @@ import React, { useEffect } from 'react';
 import './SubscribeForm.css';
 import mailLogo from '../../../../images/email.svg';
 import sendLogo from '../../../../images/send.svg';
+import { Loader } from 'components/Loader/Loader';
 
 export default function SubscribeForm() {
   const [isSend, setIsSend] = React.useState('false');
+  const [loading, setLoading] = React.useState(false);
 
   const setSend = () => {
-    setIsSend('true');
-    localStorage.setItem('isSend', 'true');
+    setLoading(true);
+    setTimeout(() => {
+      setIsSend('true');
+      localStorage.setItem('isSend', 'true');
+      setLoading(false);
+    }, 2000);
   };
 
   const setNotSend = () => {
@@ -31,16 +37,18 @@ export default function SubscribeForm() {
       {isSend !== 'false' ? (
         <h4 onClick={setNotSend}>You are already subscribed to the bank newsletter</h4>
       ) : (
-        <form className="subscribe__form">
-          <div className="subscribe__form-wrapper">
-            <img src={mailLogo} alt="email logo" />
-            <input className="subscribe__form-input" type="email" placeholder="Your email" required />
-          </div>
-          <button type="submit" className="subscribe__form-btn" onClick={setSend}>
-            <img className="subscribe__form-btn-img" src={sendLogo} alt="send email" />
-            Subscribe
-          </button>
-        </form>
+        <Loader isLoading={loading}>
+          <form className="subscribe__form">
+            <div className="subscribe__form-wrapper">
+              <img src={mailLogo} alt="email logo" />
+              <input className="subscribe__form-input" type="email" placeholder="Your email" required />
+            </div>
+            <button type="submit" className="subscribe__form-btn" onClick={setSend}>
+              <img className="subscribe__form-btn-img" src={sendLogo} alt="send email" />
+              Subscribe
+            </button>
+          </form>
+        </Loader>
       )}
     </section>
   );

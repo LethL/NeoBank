@@ -26,11 +26,11 @@
 
 .subscribe__title_subtitle {
   margin-top: 26px;
+  margin-bottom: 62px;
   font-weight: 500;
 }
 
 .subscribe__form {
-  margin-top: 62px;
   background-color: var(--white-color);
   border-radius: 20px;
   padding: 22px 32px;
