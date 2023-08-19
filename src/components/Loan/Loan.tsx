@@ -33,7 +33,7 @@ export default function Loan() {
             </div>
           </Tooltip>
         </div>
-        <LinkButton text="Apply for card" link="#" />
+        <LinkButton text="Apply for card" link="#form" />
       </div>
       <img className="loan__img" src={loanCard} alt="credit card" />
     </section>

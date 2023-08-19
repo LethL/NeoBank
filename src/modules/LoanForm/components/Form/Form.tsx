@@ -91,7 +91,7 @@ export default function Form() {
   return (
     <section className="form-section">
       <Loader isLoading={loading}>
-        <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="form" onSubmit={handleSubmit(onSubmit)} id="form">
           <div className="form__column">
             <div>
               <div className="form__wrapper">

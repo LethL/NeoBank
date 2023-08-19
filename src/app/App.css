@@ -4,15 +4,16 @@
   --white-color: #ffffff;
   --black-color: #000000;
   --pink-color: #b4387a;
-  --second-font-family: "Rubik", sans-serif;
+  --second-font-family: 'Rubik', sans-serif;
 }
 
 .app {
   background-color: #f5f4ff;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: var(--main-text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }

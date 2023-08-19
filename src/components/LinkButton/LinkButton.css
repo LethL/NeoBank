@@ -11,5 +11,6 @@
 }
 
 .link-button:hover {
-  background-color: var(--pink-color);
+  background-color: #7796c0;
+  color: var(--white-color);
 }
