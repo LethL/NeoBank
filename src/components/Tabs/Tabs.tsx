@@ -3,6 +3,7 @@ import './Tabs.css';
 import About from 'components/About/About';
 import Rates from 'components/Rates/Rates';
 import Cashback from 'components/Cashback/Cashback';
+import Faq from 'components/Faq/Faq';
 
 export default function Tabs() {
   return (
@@ -15,7 +16,8 @@ export default function Tabs() {
       </ul>
       {/* <About /> */}
       {/* <Rates /> */}
-      <Cashback />
+      {/* <Cashback /> */}
+      <Faq />
     </section>
   );
 }

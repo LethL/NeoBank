@@ -1,0 +1,31 @@
+.faq__title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 44px;
+  margin: 0 0 32px;
+}
+
+.faq__title:last-child {
+  margin: 32px 0;
+}
+
+.faq__accordion-item {
+  border: 1px solid #e2e8f0;
+}
+
+.faq__accordion-title {
+  height: 100px;
+  padding: 32px;
+  line-height: 23px;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.faq__accordion-text {
+  color: #7b7454;
+  padding: 20px 32px;
+  line-height: 23px;
+  font-weight: 400;
+  margin: 0;
+  box-sizing: border-box;
+}

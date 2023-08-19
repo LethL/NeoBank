@@ -1,9 +1,9 @@
-import React from "react";
-import { SelectFieldProps } from "./SelectField.types";
+import React from 'react';
+import { SelectFieldProps } from './SelectField.types';
 
 export default function SelectField({
   label,
-  containerClassName = "",
+  containerClassName = '',
   value,
   onChange,
   errorText,
