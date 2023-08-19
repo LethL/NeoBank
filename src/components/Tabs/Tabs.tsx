@@ -9,9 +9,9 @@ export default function Tabs() {
   const [activeTab, setActiveTab] = useState('About');
 
   function handleTabClick(event: React.MouseEvent<HTMLElement>) {
-    const tabHeaders = document.querySelectorAll('.tabs__list-item');
-    tabHeaders.forEach((tabs) => {
-      tabs.classList.remove('tabs__list-item_active');
+    const tabs = document.querySelectorAll('.tabs__list-item');
+    tabs.forEach((tab) => {
+      tab.classList.remove('tabs__list-item_active');
     });
     setActiveTab(event.currentTarget.id);
     event.currentTarget.classList.add('tabs__list-item_active');
