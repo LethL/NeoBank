@@ -2,6 +2,7 @@ import React from 'react';
 import './Tabs.css';
 import About from 'components/About/About';
 import Rates from 'components/Rates/Rates';
+import Cashback from 'components/Cashback/Cashback';
 
 export default function Tabs() {
   return (
@@ -13,7 +14,8 @@ export default function Tabs() {
         <li className="tabs__list-item">FAQ</li>
       </ul>
       {/* <About /> */}
-      <Rates />
+      {/* <Rates /> */}
+      <Cashback />
     </section>
   );
 }
