@@ -17,7 +17,7 @@
     "lint:ts": "eslint src/**/*.{ts,tsx}",
     "fix:ts": "eslint src/**/*.{ts,tsx} --quiet --fix"
   },
-  "author": "",
+  "author": "Dmitry Goncharov",
   "license": "ISC",
   "devDependencies": {
     "@babel/eslint-parser": "7.18.2",

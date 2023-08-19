@@ -1,22 +1,22 @@
 .tabs {
-  padding: 48px 0;
+  padding: 48px 0 0;
   position: relative;
 }
 
 .tabs:after {
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   background: rgba(128, 128, 128, 0.2);
   width: 100%;
   position: absolute;
-  top: 74px;
+  top: 80px;
 }
 
 .tabs__list {
   list-style: none;
   display: flex;
-  margin: 0 0 60px 0;
+  margin: 0 0 40px 0;
   padding: 0;
 }
 
