@@ -31,8 +31,9 @@ export default function NewsList() {
 
   // так не делается, но для проверки не стал создавать .env
   const newsApiKey = '96da7fbe43e546f1941cae7b7a5fb5e7';
-  useEffect(() => {
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`, {
+
+  async function onGetNewsHandler() {
+    await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`, {
       method: 'GET',
       headers: {
         'X-Api-Key': newsApiKey,
@@ -44,6 +45,16 @@ export default function NewsList() {
         setNews(data.articles);
       })
       .catch((err) => console.log(err));
+  }
+
+  useEffect(() => {
+    onGetNewsHandler();
+    const intervalId = setInterval(() => {
+      onGetNewsHandler();
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, 15 * 60 * 1000);
   }, []);
 
   return (

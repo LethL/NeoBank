@@ -15,10 +15,10 @@ export default function ExchangeList() {
   };
   const [currencies, setCurrencies] = useState({ currenciesList });
 
-  useEffect(() => {
+  async function onGetCurrenciesHandler() {
     const tempCurrenciesList: CurrenciesEntity = {};
     for (const key in currenciesList) {
-      fetch(`https://currency-exchange.p.rapidapi.com/exchange?from=${key}&to=${mainCurrency}&q=1.0`, {
+      await fetch(`https://currency-exchange.p.rapidapi.com/exchange?from=${key}&to=${mainCurrency}&q=1.0`, {
         method: 'GET',
         headers: {
           'X-RapidAPI-Key': 'fadcacf7femsh373536bc36696e7p191e2ejsn040483fdbe41',
@@ -32,6 +32,16 @@ export default function ExchangeList() {
         })
         .catch((err) => console.log(err));
     }
+  }
+
+  useEffect(() => {
+    onGetCurrenciesHandler();
+    const intervalId = setInterval(() => {
+      onGetCurrenciesHandler();
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, 15 * 60 * 1000);
   }, []);
 
   return (
