@@ -19,10 +19,13 @@ export default function NewsList() {
   }, []);
 
   function onSlidesShownHandler(): number {
-    if (windowWidth <= 700) {
+    const smallWidthDisplay = windowWidth <= 700;
+    const mediumWidthDisplay = windowWidth <= 1050;
+
+    if (smallWidthDisplay) {
       return 1;
     }
-    if (windowWidth <= 1050) {
+    if (mediumWidthDisplay) {
       return 2;
     } else {
       return 3;

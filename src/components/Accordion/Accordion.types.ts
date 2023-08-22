@@ -4,4 +4,5 @@ export interface AccordionProps {
   titleClassName?: string;
   textClassName?: string;
   itemClassName?: string;
+  isOpen?: boolean;
 }

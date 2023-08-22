@@ -12,11 +12,11 @@ export default function SelectField({
   options,
 }: SelectFieldProps) {
   return (
-    <div className={`${containerClassName}`}>
+    <div className={containerClassName}>
       <label htmlFor={label} className={labelClassName}>
         {label}
       </label>
-      <select className={`${selectClassName}`}>
+      <select className={selectClassName}>
         {options?.map((option) => (
           <option key={option.title} value={option.value}>
             {option.title}

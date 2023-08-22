@@ -15,13 +15,13 @@ export function TextField({
 }: TextFieldProps) {
   const onInputChangeValue: ChangeEventHandler<HTMLInputElement> = (evt) => onChange(evt.target.value);
   return (
-    <div className={`${containerClassName}`}>
+    <div className={containerClassName}>
       <label htmlFor={label} className={labelClassName}>
         {label}
       </label>
       <input
         type={inputType}
-        className={`${inputClassName}`}
+        className={inputClassName}
         id={label}
         placeholder={placeholder}
         value={value}

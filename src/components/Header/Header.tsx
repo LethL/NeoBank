@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import LinkButton from '../LinkButton/LinkButton';
+import { headerLinks } from '__mocks__/HeaderLinks.mock';
 
 export default function Header() {
   return (
@@ -10,26 +11,11 @@ export default function Header() {
       </a>
       <nav>
         <ul className="header__nav">
-          <li>
-            <a className="header__nav-item" href="/loan">
-              Credit card
-            </a>
-          </li>
-          <li>
-            <a className="header__nav-item" href="#">
-              Product
-            </a>
-          </li>
-          <li>
-            <a className="header__nav-item" href="#">
-              Account
-            </a>
-          </li>
-          <li>
-            <a className="header__nav-item" href="#">
-              Resources
-            </a>
-          </li>
+          {headerLinks.map((item, index) => (
+            <li key={index}>
+              <LinkButton elementClassName="header__nav-item" text={item.text} link={item.link} />
+            </li>
+          ))}
         </ul>
       </nav>
       <LinkButton text="Online Bank" link="/" />

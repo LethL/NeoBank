@@ -2,6 +2,7 @@ import React from 'react';
 import './Features.css';
 import userImage from '../../images/userimage.png';
 import checkedLogo from '../../images/checked.svg';
+import { featuresItems } from '__mocks__/FeaturesItems.mock';
 
 export default function Features() {
   return (
@@ -13,22 +14,12 @@ export default function Features() {
           You can explore the features that we provide with fun and have their own functions each feature
         </p>
         <ul className="features__list">
-          <li className="features__item">
-            <img src={checkedLogo} alt="checked item" />
-            <p className="features__item-text">Powerfull online protection.</p>
-          </li>
-          <li className="features__item">
-            <img src={checkedLogo} alt="checked item" />
-            <p className="features__item-text">Cashback without borders.</p>
-          </li>
-          <li className="features__item">
-            <img src={checkedLogo} alt="checked item" />
-            <p className="features__item-text">Personal design</p>
-          </li>
-          <li className="features__item">
-            <img src={checkedLogo} alt="checked item" />
-            <p className="features__item-text">Work anywhere in the world</p>
-          </li>
+          {featuresItems.map((item) => (
+            <li key={item.id} className="features__item">
+              <img src={checkedLogo} alt="checked item" />
+              <p className="features__item-text">{item.text}</p>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

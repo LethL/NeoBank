@@ -15,6 +15,7 @@ import { DEFAULT_VALUES } from './Form.utils';
 import { Loader } from 'components/Loader/Loader';
 
 export default function Form() {
+  // Оставил, чтоб реализовать функционал в следующем модуле
   // const options: Option[] = [
   //   {
   //     title: '6 month',

@@ -9,11 +9,19 @@
   padding: 32px;
   border-radius: 28px;
   background-color: #eaecee;
-  max-width: 566px;
+  max-width: 630px;
 }
 
-.about__item_xs {
-  width: 342px;
+.about__item:nth-child(1) {
+  width: 406px;
+}
+
+.about__item:nth-child(2) {
+  width: 406px;
+}
+
+.about__item:nth-child(3) {
+  width: 406px;
 }
 
 .about__item:nth-child(2n) {
@@ -26,12 +34,16 @@
   line-height: 44.22px;
 }
 
+.about__item-subtitle {
+  margin: 0;
+}
+
 @media screen and (max-width: 1280px) {
   .about {
     justify-content: space-around;
   }
 
   .about__item {
-    max-width: 342px;
+    max-width: 406px;
   }
 }
