@@ -1,0 +1,18 @@
+.invalid-text {
+  color: #ff5631;
+}
+
+.is-invalid {
+  border: 2px solid #ff5631;
+  background-blend-mode: multiply;
+  background: linear-gradient(to right, rgba(249, 245, 227, 1), rgba(249, 245, 227, 1)), url(/src/images/fail-logo.svg);
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+}
+
+.is-correct {
+  background-blend-mode: multiply;
+  background: linear-gradient(to right, rgba(249, 245, 227, 1), rgba(249, 245, 227, 1)), url(/src/images/ok-logo.svg);
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+}
