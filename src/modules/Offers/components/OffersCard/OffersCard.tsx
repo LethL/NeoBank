@@ -8,17 +8,20 @@ export default function OffersCard({
   cardLogo,
   cardLogoAlt,
   cardAmount,
-  cardTime,
+  cardTerm,
+  cardPayment,
   cardRate,
   cardInsurance,
   cardSalary,
+  onSubmitHandler,
 }: OffersCardProps) {
   return (
     <div className="offers-card">
       <img src={cardLogo} alt={cardLogoAlt} className="offers-card__img" />
       <p className="offers-card__text">Requested amount: {cardAmount} ₽</p>
       <p className="offers-card__text">Total amount: {cardAmount} ₽</p>
-      <p className="offers-card__text">For {cardTime} months</p>
+      <p className="offers-card__text">For {cardTerm}</p>
+      <p className="offers-card__text">Monthly payment: {cardPayment}</p>
       <p className="offers-card__text">Your rate: {cardRate}</p>
       <div className="offers-card__wrapper">
         <p className="offers-card__text">Insurance included</p>
@@ -36,7 +39,13 @@ export default function OffersCard({
           <img src={noLogo} alt="no" className="offers-card__logo" />
         )}
       </div>
-      <button className="offers-card__btn">Select</button>
+      <button
+        onClick={() => {
+          onSubmitHandler(true);
+        }}
+        className="offers-card__btn">
+        Select
+      </button>
     </div>
   );
 }

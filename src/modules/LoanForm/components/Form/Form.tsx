@@ -3,7 +3,6 @@ import './Form.css';
 import '../FormItem/FormItem.css';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useNavigate } from 'react-router-dom';
 import sliderImg from '../../../../images/slider.png';
 import { TextField } from '../../../../components/TextField/TextField';
 import FormBtn from '../FormBtn/FormBtn';
@@ -13,8 +12,10 @@ import { PrescoringFormEntity } from '../../../../domains/PrescoringForm.entity'
 import { PrescoringValidationSchema } from '../../../../helpers/PrescoringValidationSchema';
 import { DEFAULT_VALUES } from './Form.utils';
 import { Loader } from 'components/Loader/Loader';
+import { FormStore } from 'modules/LoanForm/store/Form.store';
+import { PresciringFormProps } from 'modules/Prescoring/Prescoring.types';
 
-export default function Form() {
+export default function Form({ onSubmitHandler }: PresciringFormProps) {
   // Оставил, чтоб реализовать функционал в следующем модуле
   // const options: Option[] = [
   //   {
@@ -34,8 +35,7 @@ export default function Form() {
   //     value: '24 month',
   //   },
   // ];
-  const [loading, setLoading] = React.useState(false);
-  const navigate = useNavigate();
+  const { handleFormSend, loading } = FormStore;
 
   const { control, setValue, reset, handleSubmit } = useForm<PrescoringFormEntity>({
     mode: 'all',
@@ -79,13 +79,9 @@ export default function Form() {
 
   const onSubmit = () => {
     handleSubmit(async (data: PrescoringFormEntity) => {
-      setLoading(true);
-      console.log(data);
+      handleFormSend(data);
+      onSubmitHandler(true);
       reset();
-
-      setTimeout(() => {
-        return navigate('/');
-      }, 3000);
     })();
   };
 
