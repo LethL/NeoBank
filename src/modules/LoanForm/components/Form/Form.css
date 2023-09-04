@@ -38,6 +38,10 @@
   margin: 0;
 }
 
+.form__steps_two {
+  margin: 0 0 0 80px;
+}
+
 .form__amount-wrapper {
   margin-left: 40px;
   padding-left: 40px;
@@ -76,6 +80,14 @@
 
 .form__temp-img {
   width: 100%;
+}
+
+.form__column-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 32px 0;
+  text-align: left;
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Form.css';
+import '../Form/Form.css';
 import '../FormItem/FormItem.css';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -7,34 +7,15 @@ import sliderImg from '../../../../images/slider.png';
 import { TextField } from '../../../../components/TextField/TextField';
 import FormBtn from '../FormBtn/FormBtn';
 import SelectField from '../../../../components/SelectField/SelectField';
-import { Option } from '../../../../components/SelectField/SelectField.types';
 import { PrescoringFormEntity } from '../../../../domains/PrescoringForm.entity';
 import { PrescoringValidationSchema } from '../../../../helpers/PrescoringValidationSchema';
-import { DEFAULT_VALUES } from './Form.utils';
+import { DEFAULT_VALUES } from '../Form/Form.utils';
 import { Loader } from 'components/Loader/Loader';
 import { FormStore } from 'modules/LoanForm/store/Form.store';
 import { PresciringFormProps } from 'modules/Prescoring/Prescoring.types';
+import { prescoringTermsOptions } from 'src/__mocks__/FormSelect.mock';
 
-export default function Form({ onSubmitHandler }: PresciringFormProps) {
-  // Оставил, чтоб реализовать функционал в следующем модуле
-  // const options: Option[] = [
-  //   {
-  //     title: '6 month',
-  //     value: '6 month',
-  //   },
-  //   {
-  //     title: '12 month',
-  //     value: '12 month',
-  //   },
-  //   {
-  //     title: '18 month',
-  //     value: '18 month',
-  //   },
-  //   {
-  //     title: '24 month',
-  //     value: '24 month',
-  //   },
-  // ];
+export default function StepOneForm({ onSubmitHandler }: PresciringFormProps) {
   const { handleFormSend, loading } = FormStore;
 
   const { control, setValue, reset, handleSubmit } = useForm<PrescoringFormEntity>({
@@ -73,9 +54,9 @@ export default function Form({ onSubmitHandler }: PresciringFormProps) {
     setValue('passportNumber', value);
   };
 
-  // const onChangeTerm = (value: string) => {
-  //   setValue('term', value);
-  // };
+  const onChangeTerm = (event: React.MouseEvent<HTMLSelectElement>) => {
+    setValue('term', event.currentTarget.value as string);
+  };
 
   const onSubmit = () => {
     handleSubmit(async (data: PrescoringFormEntity) => {
@@ -152,7 +133,7 @@ export default function Form({ onSubmitHandler }: PresciringFormProps) {
             <Controller
               control={control}
               name="middleName"
-              render={({ field, fieldState: { error } }) => (
+              render={({ field }) => (
                 <TextField
                   containerClassName="form-item"
                   label="Your patronymic"
@@ -168,29 +149,9 @@ export default function Form({ onSubmitHandler }: PresciringFormProps) {
             <Controller
               control={control}
               name="term"
-              render={({ field, fieldState: { error } }) => (
-                <div className="form-item">
-                  <label className="form-item__label">{'Select term *'}</label>
-                  <select
-                    value={field.value}
-                    className="form-item__select"
-                    onChange={(e) => {
-                      setValue('term', e.target.value);
-                    }}>
-                    <option value={'6 month'}>6 month</option>
-                    <option value={'12 month'}>12 month</option>
-                    <option value={'18 month'}>18 month</option>
-                    <option value={'24 month'}>24 month</option>
-                  </select>
-                </div>
-              )}
-            />
-            {/* <Controller
-              control={control}
-              name="term"
               render={({ field: { value, onBlur }, fieldState: { error } }) => (
                 <SelectField
-                  options={options}
+                  options={prescoringTermsOptions}
                   label="Select term *"
                   containerClassName="form-item"
                   value={value}
@@ -202,7 +163,7 @@ export default function Form({ onSubmitHandler }: PresciringFormProps) {
                   }}
                 />
               )}
-            /> */}
+            />
             <Controller
               control={control}
               name="email"

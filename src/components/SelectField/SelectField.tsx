@@ -1,10 +1,10 @@
 import React from 'react';
 import { SelectFieldProps } from './SelectField.types';
+import './SelectField.css';
 
 export default function SelectField({
   label,
   containerClassName = '',
-  value,
   onChange,
   errorText,
   selectClassName,
@@ -16,13 +16,14 @@ export default function SelectField({
       <label htmlFor={label} className={labelClassName}>
         {label}
       </label>
-      <select className={selectClassName}>
+      <select className={selectClassName} onClick={onChange}>
         {options?.map((option) => (
           <option key={option.title} value={option.value}>
             {option.title}
           </option>
         ))}
       </select>
+      {errorText && <div className="invalid-text">{errorText}</div>}
     </div>
   );
 }

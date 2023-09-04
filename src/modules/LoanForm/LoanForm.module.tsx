@@ -1,7 +1,13 @@
 import React from 'react';
-import Form from './components/Form/Form';
+import StepOneForm from './components/StepOneForm/StepOneForm';
+import StepTwoForm from './components/StepTwoForm/StepTwoForm';
 import { PresciringFormProps } from 'modules/Prescoring/Prescoring.types';
 
 export default function LoanForm({ onSubmitHandler }: PresciringFormProps) {
-  return <Form onSubmitHandler={onSubmitHandler} />;
+  return (
+    <>
+      {/* <StepOneForm onSubmitHandler={onSubmitHandler} /> */}
+      <StepTwoForm />
+    </>
+  );
 }

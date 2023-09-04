@@ -5,6 +5,7 @@
 
 .form-item__label {
   margin-bottom: 8px;
+  text-align: left;
 }
 
 .form-item__input {
@@ -46,13 +47,22 @@
   border-radius: 6px;
   padding-left: 16px;
   box-sizing: border-box;
+  outline: none;
+}
+
+.form-item__select_medium {
+  width: 400px;
+}
+
+.form-item__select_big {
+  width: 600px;
 }
 
 .form-item__select:focus {
   outline: 1px solid #5b35d5;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1299px) {
   .form-item {
     width: 100%;
   }
