@@ -12,10 +12,9 @@ import { PrescoringValidationSchema } from '../../../../helpers/PrescoringValida
 import { DEFAULT_VALUES } from '../Form/Form.utils';
 import { Loader } from 'components/Loader/Loader';
 import { FormStore } from 'modules/LoanForm/store/Form.store';
-import { PresciringFormProps } from 'modules/Prescoring/Prescoring.types';
 import { prescoringTermsOptions } from 'src/__mocks__/FormSelect.mock';
 
-export default function StepOneForm({ onSubmitHandler }: PresciringFormProps) {
+export default function StepOneForm() {
   const { handleFormSend, loading } = FormStore;
 
   const { control, setValue, reset, handleSubmit } = useForm<PrescoringFormEntity>({
@@ -55,13 +54,12 @@ export default function StepOneForm({ onSubmitHandler }: PresciringFormProps) {
   };
 
   const onChangeTerm = (event: React.MouseEvent<HTMLSelectElement>) => {
-    setValue('term', event.currentTarget.value as string);
+    setValue('term', Number(event.currentTarget.value.slice(0, 2)));
   };
 
   const onSubmit = () => {
     handleSubmit(async (data: PrescoringFormEntity) => {
       handleFormSend(data);
-      onSubmitHandler(true);
       reset();
     })();
   };
@@ -149,7 +147,7 @@ export default function StepOneForm({ onSubmitHandler }: PresciringFormProps) {
             <Controller
               control={control}
               name="term"
-              render={({ field: { value, onBlur }, fieldState: { error } }) => (
+              render={({ field: { value, onBlur } }) => (
                 <SelectField
                   options={prescoringTermsOptions}
                   label="Select term *"

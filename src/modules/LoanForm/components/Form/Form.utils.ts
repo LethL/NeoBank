@@ -3,7 +3,7 @@ import { ScoringFormEntity } from 'domains/ScoringForm.entity';
 
 export const DEFAULT_VALUES: PrescoringFormEntity = {
   amount: 150000,
-  term: '6 month',
+  term: 6,
   firstName: '',
   lastName: '',
   middleName: '',

@@ -1,11 +1,13 @@
-export type OffersCardProps = {
-  cardLogo: string;
-  cardLogoAlt: string;
-  cardAmount: string;
-  cardTerm: string;
-  cardPayment: string;
-  cardRate: string;
-  cardInsurance?: boolean;
-  cardSalary?: boolean;
-  onSubmitHandler: (value: boolean) => void;
+export type OffersDataProps = {
+  cardLogo?: string;
+  cardLogoAlt?: string;
+  applicationId: number;
+  requestedAmount: number;
+  totalAmount: number;
+  term: number;
+  monthlyPayment: number;
+  rate: number;
+  isInsuranceEnabled: boolean;
+  isSalaryClient: boolean;
+  onSubmitHandler?: (value: boolean) => void;
 };

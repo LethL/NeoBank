@@ -2,7 +2,7 @@ export interface PrescoringFormEntity {
   firstName: string;
   lastName: string;
   amount: number;
-  term: string;
+  term: number;
   middleName?: string;
   email: string;
   birthdate: string;

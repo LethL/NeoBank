@@ -20,7 +20,7 @@ import {
 import { TextField } from 'components/TextField/TextField';
 
 export default function StepTwoForm() {
-  const { loading } = FormStore;
+  const { loading, handleFormTwoSend } = FormStore;
 
   const { control, setValue, reset, handleSubmit } = useForm<ScoringFormEntity>({
     mode: 'all',
@@ -75,8 +75,8 @@ export default function StepTwoForm() {
   };
 
   const onSubmit = () => {
-    handleSubmit(async (data: any) => {
-      console.log(data);
+    handleSubmit(async (data: ScoringFormEntity) => {
+      handleFormTwoSend(data);
       reset();
     })();
   };

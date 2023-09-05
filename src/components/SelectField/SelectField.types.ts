@@ -5,7 +5,7 @@ export interface SelectFieldProps {
   selected?: Option | null;
   label: string;
   containerClassName?: string;
-  value?: string;
+  value?: number | string;
   onChange?: (evt: React.MouseEvent<HTMLSelectElement, MouseEvent>) => void;
   errorText?: string;
   selectClassName?: string;
