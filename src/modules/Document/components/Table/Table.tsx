@@ -28,6 +28,42 @@ export default function Table() {
   const jsonData = storedData ? JSON.parse(storedData) : null;
   const paymentSchedule = jsonData.credit.paymentSchedule;
 
+  const [paymentScheduleData, setData] = useState<PaymentScheduleEntity[]>(paymentSchedule);
+  const [sortBy, setSortBy] = useState<
+    'number' | 'date' | 'debtPayment' | 'interestPayment' | 'totalPayment' | 'remainingDebt' | undefined
+  >(undefined);
+
+  const handleSort = (
+    column: 'number' | 'date' | 'debtPayment' | 'interestPayment' | 'totalPayment' | 'remainingDebt'
+  ) => {
+    if (column === sortBy) {
+      setData([...paymentScheduleData].reverse());
+    } else {
+      setData(
+        [...paymentScheduleData].sort((a, b) => {
+          if (column === 'number') {
+            return b.number - a.number;
+          }
+          if (column === 'debtPayment') {
+            return b.debtPayment - a.debtPayment;
+          }
+          if (column === 'interestPayment') {
+            return b.interestPayment - a.interestPayment;
+          }
+          if (column === 'totalPayment') {
+            return b.totalPayment - a.totalPayment;
+          }
+          if (column === 'remainingDebt') {
+            return b.remainingDebt - a.remainingDebt;
+          } else {
+            return b.date.localeCompare(a.date);
+          }
+        })
+      );
+    }
+    setSortBy(column);
+  };
+
   return (
     <section className="table-section">
       {sended ? (
@@ -48,16 +84,20 @@ export default function Table() {
           <table className="table">
             <thead>
               <tr className="table__title">
-                <th>NUMBER</th>
-                <th>DATE</th>
-                <th>TOTAL PAYMENT</th>
-                <th>INTEREST PAYMENT</th>
-                <th>DEBT PAYMENT</th>
-                <th>REMAINING DEBT</th>
+                <th onClick={() => handleSort('number')}>NUMBER{sortBy === 'number' ? '▼' : '▲'}</th>
+                <th onClick={() => handleSort('date')}>DATE{sortBy === 'date' ? '▼' : '▲'}</th>
+                <th onClick={() => handleSort('totalPayment')}>TOTAL PAYMENT{sortBy === 'totalPayment' ? '▼' : '▲'}</th>
+                <th onClick={() => handleSort('interestPayment')}>
+                  INTEREST PAYMENT{sortBy === 'interestPayment' ? '▼' : '▲'}
+                </th>
+                <th onClick={() => handleSort('debtPayment')}>DEBT PAYMENT{sortBy === 'debtPayment' ? '▼' : '▲'}</th>
+                <th onClick={() => handleSort('remainingDebt')}>
+                  REMAINING DEBT{sortBy === 'remainingDebt' ? '▼' : '▲'}
+                </th>
               </tr>
             </thead>
             <tbody>
-              {paymentSchedule.map((item: PaymentScheduleEntity) => (
+              {paymentScheduleData.map((item: PaymentScheduleEntity) => (
                 <tr className="table__row" key={item.number}>
                   <td>{item.number}</td>
                   <td>{item.date}</td>

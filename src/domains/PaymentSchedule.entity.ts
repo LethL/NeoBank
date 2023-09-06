@@ -1,8 +1,8 @@
 export interface PaymentScheduleEntity {
-  date: string;
-  debtPayment: number;
-  interestPayment: number;
   number: number;
-  remainingDebt: number;
+  date: string;
   totalPayment: number;
+  interestPayment: number;
+  debtPayment: number;
+  remainingDebt: number;
 }
