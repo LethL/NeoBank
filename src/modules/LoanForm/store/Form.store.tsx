@@ -1,21 +1,13 @@
-import { computed, makeAutoObservable, observable, runInAction } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import dataStore from './PrescoringResponse.store';
 import { PrescoringFormEntity } from 'domains/PrescoringForm.entity';
 import { ApplicationAgentRequest } from 'http/Application.agent';
 import { ScoringFormEntity } from 'domains/ScoringForm.entity';
 import { OffersDataProps } from 'modules/Offers/components/OffersCard/OffersCard.types';
 
-type PrivateFields = '_loading' | '_formData';
-
 class FormStoreProto {
   constructor() {
-    makeAutoObservable<this, PrivateFields>(this, {
-      _loading: observable,
-      _formData: observable,
-
-      formData: computed,
-      loading: computed,
-    });
+    makeAutoObservable(this);
   }
 
   private _loading = false;
@@ -63,19 +55,36 @@ class FormStoreProto {
     }
   };
 
-  handleFormTwoSend = async (data: ScoringFormEntity) => {
+  handleScoringFormSend = async (data: ScoringFormEntity) => {
     runInAction(() => {
       this._loading = true;
     });
     try {
-      console.log(data);
-      // await ApplicationAgentRequest.sendPrescoringRequest(data);
+      await ApplicationAgentRequest.sendScoringRequest(data);
     } catch {
       if (!data) return null;
     } finally {
       runInAction(() => {
         this._loading = false;
       });
+    }
+  };
+
+  handleLoadDocument = async () => {
+    try {
+      const response = await ApplicationAgentRequest.getDocumentRequest();
+      localStorage.setItem('Document', JSON.stringify(response));
+    } catch (error) {
+      return null;
+    }
+  };
+
+  handleSendPaymentSchedule = async () => {
+    try {
+      const response = await ApplicationAgentRequest.sendPaymentScheduleRequest();
+      console.log(response);
+    } catch (error) {
+      return null;
     }
   };
 }

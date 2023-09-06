@@ -32,6 +32,13 @@
   font-size: 30px;
   line-height: 30px;
   margin: 0 0 32px;
+  color: #1c1c1e;
+}
+
+.form__title_accent {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0 0 76px;
 }
 
 .form__steps {
@@ -40,6 +47,10 @@
 
 .form__steps_two {
   margin: 0 0 0 80px;
+}
+
+.form__steps_three {
+  margin: 0 0 0 120px;
 }
 
 .form__amount-wrapper {

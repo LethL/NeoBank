@@ -252,7 +252,7 @@ export default function StepOneForm() {
             />
           </div>
           <div className="form-btn__wrapper">
-            <FormBtn />
+            <FormBtn text="Continue" />
           </div>
         </form>
       </Loader>

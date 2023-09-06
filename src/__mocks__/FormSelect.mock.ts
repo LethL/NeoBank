@@ -29,8 +29,8 @@ export const genderSelectOptions: Option[] = [
     value: 'MALE',
   },
   {
-    title: 'FAMALE',
-    value: 'FAMALE',
+    title: 'FEMALE',
+    value: 'FEMALE',
   },
 ];
 

@@ -1,10 +1,15 @@
 import React from 'react';
 import './FormBtn.css';
+import { FormBtnProps } from './FormBtn.types';
 
-export default function FormBtn() {
+FormBtn.defaultProps = {
+  isDisabled: false,
+};
+
+export default function FormBtn({ text, isDisabled }: FormBtnProps) {
   return (
-    <button className="form-btn" type="submit">
-      Continue
+    <button className={`form-btn ${isDisabled ? 'form-btn_disabled' : ''}`} type="submit" disabled={isDisabled}>
+      {text}
     </button>
   );
 }
