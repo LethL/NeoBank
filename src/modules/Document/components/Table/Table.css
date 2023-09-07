@@ -24,3 +24,12 @@
 .table__ckeckbox {
   margin-right: 40px;
 }
+
+.table__btn_deny {
+  padding: 15px 40px;
+  background-color: #d93737;
+  border-radius: 8px;
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+}

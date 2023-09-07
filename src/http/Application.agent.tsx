@@ -33,6 +33,11 @@ class ApplicationAgent extends BasicAgent {
     const { data } = await this._http.post(`document/${APPLICATIONID}`);
     return data;
   }
+
+  async sendDocumentSignRequest() {
+    const { data } = await this._http.post(`document/${APPLICATIONID}/sign`);
+    return data;
+  }
 }
 
 export const ApplicationAgentRequest = new ApplicationAgent();

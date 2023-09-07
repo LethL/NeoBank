@@ -1,0 +1,15 @@
+.modal__close-icon {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  cursor: pointer;
+}
+
+.modal__btn-wrapper {
+  margin-top: 32px;
+  text-align: end;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}

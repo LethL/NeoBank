@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Table.css';
 import { FormStore } from 'modules/LoanForm/store/Form.store';
 import { PaymentScheduleEntity } from 'domains/PaymentSchedule.entity';
-import FormBtn from 'modules/LoanForm/components/FormBtn/FormBtn';
+import ModalPopup from 'components/Modal/Modal';
+import Button from 'components/Button/Button';
 
 export default function Table() {
   const [isChecked, setIsChecked] = useState(false);
@@ -64,6 +65,16 @@ export default function Table() {
     setSortBy(column);
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <section className="table-section">
       {sended ? (
@@ -110,17 +121,18 @@ export default function Table() {
             </tbody>
           </table>
           <div className="table-btns__wrapper">
-            <button>deny</button>
+            <Button text="Deny" onClick={openModal} className="btn btn_red btn_small" />
             <div>
               <label className="table__ckeckbox">
                 <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} />I agree with the payment
                 schedule
               </label>
-              <FormBtn text="Send" isDisabled={!isChecked} />
+              <Button text="Send" disabled={!isChecked} type="submit" className="btn btn_blue btn_small" />
             </div>
           </div>
         </form>
       )}
+      <ModalPopup isOpen={isModalOpen} onClose={closeModal} />
     </section>
   );
 }

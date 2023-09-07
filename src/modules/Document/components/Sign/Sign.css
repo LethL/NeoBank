@@ -1,0 +1,36 @@
+.sign {
+  padding: 104px 0 97px;
+}
+
+.sign__header {
+  display: flex;
+  align-items: baseline;
+}
+
+.sign__title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 33px;
+  color: #1c1c1e;
+  margin: 0 120px 32px 0;
+}
+
+.sign__text {
+  font-size: 20px;
+  line-height: 22px;
+  color: #4f5665;
+}
+
+.sign__link {
+  text-decoration: none;
+  color: var(--black-color);
+  display: flex;
+  align-items: end;
+}
+
+.sign__btns {
+  margin-top: 15px;
+  display: flex;
+  align-items: baseline;
+  justify-content: end;
+}

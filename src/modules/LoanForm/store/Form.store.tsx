@@ -81,8 +81,15 @@ class FormStoreProto {
 
   handleSendPaymentSchedule = async () => {
     try {
-      const response = await ApplicationAgentRequest.sendPaymentScheduleRequest();
-      console.log(response);
+      await ApplicationAgentRequest.sendPaymentScheduleRequest();
+    } catch (error) {
+      return null;
+    }
+  };
+
+  handleSendPDocumentSign = async () => {
+    try {
+      await ApplicationAgentRequest.sendDocumentSignRequest();
     } catch (error) {
       return null;
     }
