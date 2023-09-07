@@ -1,0 +1,25 @@
+.code {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.code__title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 33px;
+  color: #1c1c1e;
+}
+
+.code-input input {
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.code__err-text {
+  color: #ff5631;
+}

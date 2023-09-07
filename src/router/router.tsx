@@ -7,6 +7,7 @@ import NotFoundPage from 'components/NotFoundPage/NotFoundPage';
 import StepTwoForm from 'modules/LoanForm/components/StepTwoForm/StepTwoForm';
 import DocumentPage from 'pages/DocumentPage/DocumentPage';
 import DocumentSignPage from 'pages/DocumentSignPage/DocumentSignPage';
+import CodePage from 'pages/CodePage/CodePage';
 
 export function Router() {
   return (
@@ -16,6 +17,7 @@ export function Router() {
       <Route path={PATH_LIST.APPLICATIONID} element={<StepTwoForm />} />
       <Route path={PATH_LIST.DOCUMENT} element={<DocumentPage />} />
       <Route path={PATH_LIST.SIGN} element={<DocumentSignPage />} />
+      <Route path={PATH_LIST.CODE} element={<CodePage />} />
       <Route path={PATH_LIST.NOTFOUND} element={<NotFoundPage />} />
     </Routes>
   );

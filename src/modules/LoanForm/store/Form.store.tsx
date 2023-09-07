@@ -79,6 +79,15 @@ class FormStoreProto {
     }
   };
 
+  handleLoadAppData = async () => {
+    try {
+      const response = await ApplicationAgentRequest.getDocumentRequest();
+      return response;
+    } catch (error) {
+      return null;
+    }
+  };
+
   handleSendPaymentSchedule = async () => {
     try {
       await ApplicationAgentRequest.sendPaymentScheduleRequest();
@@ -90,6 +99,14 @@ class FormStoreProto {
   handleSendPDocumentSign = async () => {
     try {
       await ApplicationAgentRequest.sendDocumentSignRequest();
+    } catch (error) {
+      return null;
+    }
+  };
+
+  handleSendCodeSign = async (code: string) => {
+    try {
+      await ApplicationAgentRequest.sendCodeSignRequest(code);
     } catch (error) {
       return null;
     }

@@ -5,6 +5,9 @@ export class BasicAgent {
 
   constructor(baseURL: string, config?: AxiosRequestConfig) {
     this._http = axios.create({
+      headers: {
+        'Content-Type': 'application/json',
+      },
       baseURL,
       ...config,
     });

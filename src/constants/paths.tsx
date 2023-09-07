@@ -1,11 +1,11 @@
-const offerChoosenData = localStorage.getItem('offersData');
-const jsonData = offerChoosenData ? JSON.parse(offerChoosenData) : '';
+import applicationId from './applicationId';
 
 export const HOME = '/';
 export const LOAN = 'loan';
-export const APPLICATIONID = jsonData[0].applicationId;
+export const APPLICATIONID = applicationId;
 export const DOCUMENT = 'document';
 export const SIGN = 'sign';
+export const CODE = 'code';
 export const NOTFOUND = '*';
 
 export const PATH_LIST = {
@@ -14,5 +14,6 @@ export const PATH_LIST = {
   APPLICATIONID: `${HOME}${LOAN}/${APPLICATIONID}`,
   DOCUMENT: `${HOME}${LOAN}/${APPLICATIONID}/${DOCUMENT}`,
   SIGN: `${HOME}${LOAN}/${APPLICATIONID}/${DOCUMENT}/${SIGN}`,
+  CODE: `${HOME}${LOAN}/${APPLICATIONID}/${CODE}`,
   NOTFOUND,
 };
