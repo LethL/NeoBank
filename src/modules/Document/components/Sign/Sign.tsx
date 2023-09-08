@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Sign.css';
 import documentLogo from 'src/images/document-logo.svg';
 import Button from 'components/Button/Button';
 import SuccessText from 'components/SuccessText/SuccessText';
-import { FormStore } from 'modules/LoanForm/store/Form.store';
+import { LoanStore } from 'modules/Loan/store/Loan.store';
 
 export default function Sign() {
-  const [isChecked, setIsChecked] = useState(false);
-  const [sended, setSended] = useState(false);
+  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('credit'));
 
-  const { handleSendPDocumentSign } = FormStore;
+  useEffect(() => {
+    const handleLocalStorageChange = () => {
+      setStepStorageValue(localStorage.getItem('credit'));
+    };
+    window.addEventListener('localStorageChange', handleLocalStorageChange);
+    return () => {
+      window.removeEventListener('localStorageChange', handleLocalStorageChange);
+    };
+  }, []);
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const { handleSendPDocumentSign } = LoanStore;
 
   function onSubmit() {
-    setSended(true);
     handleSendPDocumentSign();
   }
 
@@ -21,7 +31,7 @@ export default function Sign() {
   };
   return (
     <>
-      {sended ? (
+      {stepStorageValue === 'step_signing' ? (
         <SuccessText
           title="Documents have been successfully signed and sent for approval"
           text="Within 10 minutes you will be sent a PIN code to your email for confirmation"

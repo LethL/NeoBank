@@ -3,13 +3,24 @@ import './Code.css';
 import ReactCodeInput from 'react-code-input';
 import { props } from './Code.props';
 import Button from 'components/Button/Button';
-import { FormStore } from 'modules/LoanForm/store/Form.store';
+import { LoanStore } from 'modules/Loan/store/Loan.store';
 import Congratulations from 'components/Congratulations/Congratulations';
 
 export default function Code() {
-  const { handleLoadAppData, handleSendCodeSign } = FormStore;
+  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('credit'));
+
+  useEffect(() => {
+    const handleLocalStorageChange = () => {
+      setStepStorageValue(localStorage.getItem('credit'));
+    };
+    window.addEventListener('localStorageChange', handleLocalStorageChange);
+    return () => {
+      window.removeEventListener('localStorageChange', handleLocalStorageChange);
+    };
+  }, []);
+
+  const { handleLoadAppData, handleSendCodeSign } = LoanStore;
   const [code, setData] = useState('');
-  const [sended, setSended] = useState(false);
 
   useEffect(() => {
     const getCode = async () => {
@@ -27,7 +38,6 @@ export default function Code() {
     setIsPinCodeValid(isPinCodeValid);
     if (isPinCodeValid) {
       handleSendCodeSign(code);
-      setSended(true);
     }
   };
 
@@ -37,7 +47,7 @@ export default function Code() {
 
   return (
     <>
-      {sended ? (
+      {stepStorageValue === 'step_code' ? (
         <Congratulations />
       ) : (
         <section className="code">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { observer } from 'mobx-react';
 import '../Form/Form.css';
 import '../FormItem/FormItem.css';
 import { Controller, useForm } from 'react-hook-form';
@@ -11,11 +12,11 @@ import { PrescoringFormEntity } from '../../../../domains/PrescoringForm.entity'
 import { PrescoringValidationSchema } from '../../../../helpers/PrescoringValidationSchema';
 import { DEFAULT_VALUES } from '../Form/Form.utils';
 import { Loader } from 'components/Loader/Loader';
-import { FormStore } from 'modules/LoanForm/store/Form.store';
+import { LoanStore } from 'modules/Loan/store/Loan.store';
 import { prescoringTermsOptions } from 'src/__mocks__/FormSelect.mock';
 
-export default function StepOneForm() {
-  const { handleFormSend, loading } = FormStore;
+function PrescoringFormProto() {
+  const { handlePrescoringSend, loading } = LoanStore;
 
   const { control, setValue, reset, handleSubmit } = useForm<PrescoringFormEntity>({
     mode: 'all',
@@ -59,7 +60,7 @@ export default function StepOneForm() {
 
   const onSubmit = () => {
     handleSubmit(async (data: PrescoringFormEntity) => {
-      handleFormSend(data);
+      handlePrescoringSend(data);
       reset();
     })();
   };
@@ -259,3 +260,5 @@ export default function StepOneForm() {
     </section>
   );
 }
+
+export const PrescoringForm = observer(PrescoringFormProto);

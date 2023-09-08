@@ -6,7 +6,6 @@ export const DEFAULT_VALUES: PrescoringFormEntity = {
   term: 6,
   firstName: '',
   lastName: '',
-  middleName: '',
   email: '',
   birthdate: '',
   passportSeries: '',

@@ -1,6 +1,6 @@
 import React from 'react';
-import Document from 'modules/Document/Document.module';
+import Table from 'modules/Document/components/Table/Table';
 
 export default function DocumentPage() {
-  return <Document />;
+  return <Table />;
 }

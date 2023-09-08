@@ -5,7 +5,7 @@ import loanCard from '../../images/loan-card.png';
 import Tooltip from 'components/Tooltip/Tooltip';
 import { loanItems } from '__mocks__/LoanItems.mock';
 
-export default function Loan() {
+export default function LoanIntro() {
   return (
     <section className="loan">
       <div className="loan__content">

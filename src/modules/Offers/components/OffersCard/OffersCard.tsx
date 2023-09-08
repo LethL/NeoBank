@@ -3,7 +3,7 @@ import { OffersDataProps } from './OffersCard.types';
 import yesLogo from 'src/images/ok-logo.svg';
 import noLogo from 'src/images/fail-logo.svg';
 import './OffersCard.css';
-import { FormStore } from 'modules/LoanForm/store/Form.store';
+import { LoanStore } from 'modules/Loan/store/Loan.store';
 
 export default function OffersCard({
   cardLogo,
@@ -16,9 +16,8 @@ export default function OffersCard({
   rate,
   isInsuranceEnabled,
   isSalaryClient,
-  onSubmitHandler,
 }: OffersDataProps) {
-  const { handleOfferSend } = FormStore;
+  const { handleOfferSend } = LoanStore;
   return (
     <div className="offers-card">
       <img src={cardLogo} alt={cardLogoAlt} className="offers-card__img" />

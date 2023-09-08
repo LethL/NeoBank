@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import { ModalProps } from './Modal.types';
 import Button from 'components/Button/Button';
@@ -6,6 +7,7 @@ import './Modal.css';
 import closeLogo from 'src/images/close-icon.svg';
 
 export default function ModalPopup({ isOpen, onClose }: ModalProps) {
+  const history = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {
@@ -15,6 +17,11 @@ export default function ModalPopup({ isOpen, onClose }: ModalProps) {
   const closeModal = () => {
     setCurrentStep(1);
     onClose();
+  };
+
+  const handleDoneApp = () => {
+    history('/');
+    localStorage.clear();
   };
 
   const customStyles = {
@@ -53,7 +60,7 @@ export default function ModalPopup({ isOpen, onClose }: ModalProps) {
           <img className="modal__close-icon" onClick={closeModal} src={closeLogo} alt="close modal" />
           <p>Your application has been deny!</p>
           <div className="modal__btn-wrapper">
-            <Button text="Go home" onClick={closeModal} className="btn btn_blue btn_medium" />
+            <Button text="Go home" onClick={handleDoneApp} className="btn btn_blue btn_medium" />
           </div>
         </div>
       )}

@@ -63,6 +63,10 @@ export const dependentSelectOptions: Option[] = [
     value: '',
   },
   {
+    title: '0',
+    value: '0',
+  },
+  {
     title: '1',
     value: '1',
   },
@@ -73,10 +77,6 @@ export const dependentSelectOptions: Option[] = [
   {
     title: '3',
     value: '3',
-  },
-  {
-    title: '3+',
-    value: '3+',
   },
 ];
 

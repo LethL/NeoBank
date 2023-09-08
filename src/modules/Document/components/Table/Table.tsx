@@ -1,33 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import './Table.css';
-import { FormStore } from 'modules/LoanForm/store/Form.store';
+import { LoanStore } from 'modules/Loan/store/Loan.store';
 import { PaymentScheduleEntity } from 'domains/PaymentSchedule.entity';
 import ModalPopup from 'components/Modal/Modal';
 import Button from 'components/Button/Button';
+import SuccessText from 'components/SuccessText/SuccessText';
 
 export default function Table() {
+  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('credit'));
+
+  useEffect(() => {
+    const handleLocalStorageChange = () => {
+      setStepStorageValue(localStorage.getItem('credit'));
+    };
+    window.addEventListener('localStorageChange', handleLocalStorageChange);
+    return () => {
+      window.removeEventListener('localStorageChange', handleLocalStorageChange);
+    };
+  }, []);
+
   const [isChecked, setIsChecked] = useState(false);
-  const [sended, setSended] = useState(false);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
   };
 
-  const { handleLoadDocument, handleSendPaymentSchedule } = FormStore;
-
-  useEffect(() => {
-    handleLoadDocument();
-  }, []);
+  const { handleSendPaymentSchedule } = LoanStore;
 
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     handleSendPaymentSchedule();
-    setSended(true);
   };
 
-  const storedData = localStorage.getItem('Document');
-  const jsonData = storedData ? JSON.parse(storedData) : null;
-  const paymentSchedule = jsonData.credit.paymentSchedule;
+  const storedDocument = localStorage.getItem('Document');
+
+  let paymentSchedule: PaymentScheduleEntity[];
+
+  if (storedDocument) {
+    const documentData = JSON.parse(storedDocument);
+    paymentSchedule = documentData.credit.paymentSchedule;
+  } else {
+    paymentSchedule = [];
+  }
 
   const [paymentScheduleData, setData] = useState<PaymentScheduleEntity[]>(paymentSchedule);
   const [sortBy, setSortBy] = useState<
@@ -77,11 +91,8 @@ export default function Table() {
 
   return (
     <section className="table-section">
-      {sended ? (
-        <div>
-          <h2>Documents are formed</h2>
-          <p>Documents for signing will be sent to your email</p>
-        </div>
+      {stepStorageValue === 'step_payment' ? (
+        <SuccessText title="Documents are formed" text="Documents for signing will be sent to your email" />
       ) : (
         <form className="form" onSubmit={onSubmit}>
           <div className="form__column">

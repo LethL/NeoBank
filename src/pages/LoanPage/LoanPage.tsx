@@ -1,16 +1,16 @@
 import React from 'react';
-import Loan from '../../components/Loan/Loan';
+import LoanInto from '../../components/LoanIntro/Loan';
 import Tabs from '../../components/Tabs/Tabs';
 import Divider from '../../components/Divider/Divider';
-import Prescoring from 'modules/Prescoring/Prescoring.module';
+import Loan from 'modules/Loan/Loan.module';
 
 export default function LoanPage() {
   return (
     <main>
-      <Loan />
+      <LoanInto />
       <Tabs />
       <Divider />
-      <Prescoring />
+      <Loan />
     </main>
   );
 }

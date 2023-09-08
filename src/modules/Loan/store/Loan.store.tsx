@@ -5,7 +5,7 @@ import { ApplicationAgentRequest } from 'http/Application.agent';
 import { ScoringFormEntity } from 'domains/ScoringForm.entity';
 import { OffersDataProps } from 'modules/Offers/components/OffersCard/OffersCard.types';
 
-class FormStoreProto {
+class LoanStoreProto {
   constructor() {
     makeAutoObservable(this);
   }
@@ -22,14 +22,21 @@ class FormStoreProto {
     return this._formData;
   }
 
-  handleFormSend = async (data: PrescoringFormEntity) => {
+  handleChangeCreditStep = (key: string, value: string) => {
+    localStorage.setItem(key, value);
+    const event = new Event('localStorageChange');
+    window.dispatchEvent(event);
+  };
+
+  handlePrescoringSend = async (data: PrescoringFormEntity) => {
     runInAction(() => {
       this._loading = true;
     });
     try {
       const response = await ApplicationAgentRequest.createLoanRequest(data);
-      dataStore.setData(response);
-      localStorage.setItem('offersData', JSON.stringify(response));
+      await dataStore.setData(response);
+      await localStorage.setItem('offersData', JSON.stringify(response));
+      await this.handleChangeCreditStep('credit', 'step_prescoring');
     } catch {
       if (!data) return null;
     } finally {
@@ -45,22 +52,8 @@ class FormStoreProto {
     });
     try {
       await ApplicationAgentRequest.sendPrescoringRequest(data);
-      localStorage.setItem('offerChoose', 'true');
-    } catch {
-      if (!data) return null;
-    } finally {
-      runInAction(() => {
-        this._loading = false;
-      });
-    }
-  };
-
-  handleScoringFormSend = async (data: ScoringFormEntity) => {
-    runInAction(() => {
-      this._loading = true;
-    });
-    try {
-      await ApplicationAgentRequest.sendScoringRequest(data);
+      await localStorage.setItem('offerChoose', 'true');
+      await this.handleChangeCreditStep('credit', 'step_offers');
     } catch {
       if (!data) return null;
     } finally {
@@ -88,9 +81,27 @@ class FormStoreProto {
     }
   };
 
+  handleScoringFormSend = async (data: ScoringFormEntity) => {
+    runInAction(() => {
+      this._loading = true;
+    });
+    try {
+      await ApplicationAgentRequest.sendScoringRequest(data);
+      await this.handleChangeCreditStep('credit', 'step_scoring');
+      await this.handleLoadDocument();
+    } catch {
+      if (!data) return null;
+    } finally {
+      runInAction(() => {
+        this._loading = false;
+      });
+    }
+  };
+
   handleSendPaymentSchedule = async () => {
     try {
       await ApplicationAgentRequest.sendPaymentScheduleRequest();
+      await this.handleChangeCreditStep('credit', 'step_payment');
     } catch (error) {
       return null;
     }
@@ -99,6 +110,7 @@ class FormStoreProto {
   handleSendPDocumentSign = async () => {
     try {
       await ApplicationAgentRequest.sendDocumentSignRequest();
+      await this.handleChangeCreditStep('credit', 'step_signing');
     } catch (error) {
       return null;
     }
@@ -107,10 +119,11 @@ class FormStoreProto {
   handleSendCodeSign = async (code: string) => {
     try {
       await ApplicationAgentRequest.sendCodeSignRequest(code);
+      await this.handleChangeCreditStep('credit', 'step_code');
     } catch (error) {
       return null;
     }
   };
 }
 
-export const FormStore = new FormStoreProto();
+export const LoanStore = new LoanStoreProto();
