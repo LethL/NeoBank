@@ -36,7 +36,7 @@ class LoanStoreProto {
       const response = await ApplicationAgentRequest.createLoanRequest(data);
       await dataStore.setData(response);
       await localStorage.setItem('offersData', JSON.stringify(response));
-      await this.handleChangeCreditStep('credit', 'step_prescoring');
+      await this.handleChangeCreditStep('status', 'step_prescoring');
     } catch {
       if (!data) return null;
     } finally {
@@ -53,7 +53,7 @@ class LoanStoreProto {
     try {
       await ApplicationAgentRequest.sendPrescoringRequest(data);
       await localStorage.setItem('offerChoose', 'true');
-      await this.handleChangeCreditStep('credit', 'step_offers');
+      await this.handleChangeCreditStep('status', 'step_offers');
     } catch {
       if (!data) return null;
     } finally {
@@ -87,7 +87,7 @@ class LoanStoreProto {
     });
     try {
       await ApplicationAgentRequest.sendScoringRequest(data);
-      await this.handleChangeCreditStep('credit', 'step_scoring');
+      await this.handleChangeCreditStep('status', 'step_scoring');
       await this.handleLoadDocument();
     } catch {
       if (!data) return null;
@@ -101,7 +101,7 @@ class LoanStoreProto {
   handleSendPaymentSchedule = async () => {
     try {
       await ApplicationAgentRequest.sendPaymentScheduleRequest();
-      await this.handleChangeCreditStep('credit', 'step_payment');
+      await this.handleChangeCreditStep('status', 'step_payment');
     } catch (error) {
       return null;
     }
@@ -110,7 +110,7 @@ class LoanStoreProto {
   handleSendPDocumentSign = async () => {
     try {
       await ApplicationAgentRequest.sendDocumentSignRequest();
-      await this.handleChangeCreditStep('credit', 'step_signing');
+      await this.handleChangeCreditStep('status', 'step_signing');
     } catch (error) {
       return null;
     }
@@ -119,7 +119,7 @@ class LoanStoreProto {
   handleSendCodeSign = async (code: string) => {
     try {
       await ApplicationAgentRequest.sendCodeSignRequest(code);
-      await this.handleChangeCreditStep('credit', 'step_code');
+      await this.handleChangeCreditStep('status', 'step_code');
     } catch (error) {
       return null;
     }

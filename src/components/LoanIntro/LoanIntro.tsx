@@ -1,11 +1,35 @@
-import React from 'react';
-import './Loan.css';
+import React, { useEffect, useState } from 'react';
+import './LoanIntro.css';
 import LinkButton from '../LinkButton/LinkButton';
 import loanCard from '../../images/loan-card.png';
 import Tooltip from 'components/Tooltip/Tooltip';
 import { loanItems } from '__mocks__/LoanItems.mock';
+import { APPLICATIONID } from 'constants/paths';
 
 export default function LoanIntro() {
+  const [text, setText] = useState('Apply for card');
+  const [link, setLink] = useState('#form');
+
+  useEffect(() => {
+    const status = localStorage.getItem('status');
+    if (status === 'step_offers') {
+      setText('Continue registration');
+      setLink(`loan/${APPLICATIONID}`);
+    }
+    if (status === 'step_scoring') {
+      setText('Continue registration');
+      setLink(`loan/${APPLICATIONID}/document`);
+    }
+    if (status === 'step_payment') {
+      setText('Continue registration');
+      setLink(`loan/${APPLICATIONID}/document/sign`);
+    }
+    if (status === ('step_signing' || 'step_code')) {
+      setText('Continue registration');
+      setLink(`loan/${APPLICATIONID}/code`);
+    }
+  }, []);
+
   return (
     <section className="loan">
       <div className="loan__content">
@@ -24,7 +48,7 @@ export default function LoanIntro() {
             </Tooltip>
           ))}
         </div>
-        <LinkButton text="Apply for card" link="#form" />
+        <LinkButton text={text} link={link} />
       </div>
       <img className="loan__img" src={loanCard} alt="credit card" />
     </section>

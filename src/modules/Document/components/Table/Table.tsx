@@ -7,11 +7,11 @@ import Button from 'components/Button/Button';
 import SuccessText from 'components/SuccessText/SuccessText';
 
 export default function Table() {
-  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('credit'));
+  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('status'));
 
   useEffect(() => {
     const handleLocalStorageChange = () => {
-      setStepStorageValue(localStorage.getItem('credit'));
+      setStepStorageValue(localStorage.getItem('status'));
     };
     window.addEventListener('localStorageChange', handleLocalStorageChange);
     return () => {
@@ -103,34 +103,38 @@ export default function Table() {
               </div>
             </div>
           </div>
-          <table className="table">
-            <thead>
-              <tr className="table__title">
-                <th onClick={() => handleSort('number')}>NUMBER{sortBy === 'number' ? '▼' : '▲'}</th>
-                <th onClick={() => handleSort('date')}>DATE{sortBy === 'date' ? '▼' : '▲'}</th>
-                <th onClick={() => handleSort('totalPayment')}>TOTAL PAYMENT{sortBy === 'totalPayment' ? '▼' : '▲'}</th>
-                <th onClick={() => handleSort('interestPayment')}>
-                  INTEREST PAYMENT{sortBy === 'interestPayment' ? '▼' : '▲'}
-                </th>
-                <th onClick={() => handleSort('debtPayment')}>DEBT PAYMENT{sortBy === 'debtPayment' ? '▼' : '▲'}</th>
-                <th onClick={() => handleSort('remainingDebt')}>
-                  REMAINING DEBT{sortBy === 'remainingDebt' ? '▼' : '▲'}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {paymentScheduleData.map((item: PaymentScheduleEntity) => (
-                <tr className="table__row" key={item.number}>
-                  <td>{item.number}</td>
-                  <td>{item.date}</td>
-                  <td>{item.totalPayment}</td>
-                  <td>{item.interestPayment}</td>
-                  <td>{item.debtPayment}</td>
-                  <td>{item.remainingDebt}</td>
+          <div className="table-responsive">
+            <table className="table">
+              <thead>
+                <tr className="table__title">
+                  <th onClick={() => handleSort('number')}>NUMBER{sortBy === 'number' ? '▼' : '▲'}</th>
+                  <th onClick={() => handleSort('date')}>DATE{sortBy === 'date' ? '▼' : '▲'}</th>
+                  <th onClick={() => handleSort('totalPayment')}>
+                    TOTAL PAYMENT{sortBy === 'totalPayment' ? '▼' : '▲'}
+                  </th>
+                  <th onClick={() => handleSort('interestPayment')}>
+                    INTEREST PAYMENT{sortBy === 'interestPayment' ? '▼' : '▲'}
+                  </th>
+                  <th onClick={() => handleSort('debtPayment')}>DEBT PAYMENT{sortBy === 'debtPayment' ? '▼' : '▲'}</th>
+                  <th onClick={() => handleSort('remainingDebt')}>
+                    REMAINING DEBT{sortBy === 'remainingDebt' ? '▼' : '▲'}
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {paymentScheduleData.map((item: PaymentScheduleEntity) => (
+                  <tr className="table__row" key={item.number}>
+                    <td>{item.number}</td>
+                    <td>{item.date}</td>
+                    <td>{item.totalPayment}</td>
+                    <td>{item.interestPayment}</td>
+                    <td>{item.debtPayment}</td>
+                    <td>{item.remainingDebt}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <div className="table-btns__wrapper">
             <Button text="Deny" onClick={openModal} className="btn btn_red btn_small" />
             <div>

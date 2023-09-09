@@ -7,11 +7,11 @@ import { LoanStore } from 'modules/Loan/store/Loan.store';
 import Congratulations from 'components/Congratulations/Congratulations';
 
 export default function Code() {
-  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('credit'));
+  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('status'));
 
   useEffect(() => {
     const handleLocalStorageChange = () => {
-      setStepStorageValue(localStorage.getItem('credit'));
+      setStepStorageValue(localStorage.getItem('status'));
     };
     window.addEventListener('localStorageChange', handleLocalStorageChange);
     return () => {

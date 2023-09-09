@@ -6,11 +6,11 @@ import SuccessText from 'components/SuccessText/SuccessText';
 import { LoanStore } from 'modules/Loan/store/Loan.store';
 
 export default function Sign() {
-  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('credit'));
+  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('status'));
 
   useEffect(() => {
     const handleLocalStorageChange = () => {
-      setStepStorageValue(localStorage.getItem('credit'));
+      setStepStorageValue(localStorage.getItem('status'));
     };
     window.addEventListener('localStorageChange', handleLocalStorageChange);
     return () => {

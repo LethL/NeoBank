@@ -1,5 +1,5 @@
 import React from 'react';
-import LoanInto from '../../components/LoanIntro/Loan';
+import LoanInto from '../../components/LoanIntro/LoanIntro';
 import Tabs from '../../components/Tabs/Tabs';
 import Divider from '../../components/Divider/Divider';
 import Loan from 'modules/Loan/Loan.module';

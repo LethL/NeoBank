@@ -5,6 +5,7 @@
 .sign__header {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .sign__title {
@@ -33,4 +34,5 @@
   display: flex;
   align-items: baseline;
   justify-content: end;
+  flex-wrap: wrap;
 }

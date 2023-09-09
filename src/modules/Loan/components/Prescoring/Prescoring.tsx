@@ -4,11 +4,11 @@ import Offers from 'modules/Offers/Offers.module';
 import Decision from 'components/Decision/Decision';
 
 export default function Prescoring() {
-  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('credit'));
+  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('status'));
 
   useEffect(() => {
     const handleLocalStorageChange = () => {
-      setStepStorageValue(localStorage.getItem('credit'));
+      setStepStorageValue(localStorage.getItem('status'));
     };
     window.addEventListener('localStorageChange', handleLocalStorageChange);
     return () => {

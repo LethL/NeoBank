@@ -3,11 +3,11 @@ import ScoringForm from '../ScoringForm/ScoringForm';
 import SuccessText from 'components/SuccessText/SuccessText';
 
 export default function Scoring() {
-  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('credit'));
+  const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('status'));
 
   useEffect(() => {
     const handleLocalStorageChange = () => {
-      setStepStorageValue(localStorage.getItem('credit'));
+      setStepStorageValue(localStorage.getItem('status'));
     };
     window.addEventListener('localStorageChange', handleLocalStorageChange);
     return () => {
