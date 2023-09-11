@@ -19,6 +19,7 @@
 .table-btns__wrapper {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .table__ckeckbox {

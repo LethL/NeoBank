@@ -4,5 +4,8 @@ import Code from 'modules/Document/components/Code/Code';
 
 export default function CodePage() {
   const creditStep = localStorage.getItem('status');
-  return creditStep === ('step_signing' || 'step_code') ? <Code /> : <Navigate to={'/404'} />;
+  if (creditStep === 'step_code' || creditStep === 'step_signing') {
+    return <Code />;
+  }
+  return <Navigate to={'/404'} />;
 }

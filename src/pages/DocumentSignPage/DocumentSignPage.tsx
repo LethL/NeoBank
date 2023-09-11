@@ -4,5 +4,8 @@ import Sign from 'modules/Document/components/Sign/Sign';
 
 export default function DocumentSignPage() {
   const creditStep = localStorage.getItem('status');
-  return creditStep === 'step_payment' ? <Sign /> : <Navigate to={'/404'} />;
+  if (creditStep === 'step_payment' || creditStep === 'step_signing') {
+    return <Sign />;
+  }
+  return <Navigate to={'/404'} />;
 }
