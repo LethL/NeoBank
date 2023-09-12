@@ -10,24 +10,29 @@ export default function LoanIntro() {
   const [text, setText] = useState('Apply for card');
   const [link, setLink] = useState('#form');
 
-  useEffect(() => {
+  function setBtnStatus() {
     const status = localStorage.getItem('status');
-    if (status === 'step_offers') {
-      setText('Continue registration');
-      setLink(`loan/${APPLICATIONID}`);
+    switch (status) {
+      case 'step_offers':
+        setText('Continue registration');
+        setLink(`loan/${APPLICATIONID}`);
+        break;
+      case 'step_scoring':
+        setText('Continue registration');
+        setLink(`loan/${APPLICATIONID}/document`);
+        break;
+      case 'step_payment':
+        setText('Continue registration');
+        setLink(`loan/${APPLICATIONID}/document/sign`);
+        break;
+      case 'step_signing' || 'step_code':
+        setText('Continue registration');
+        setLink(`loan/${APPLICATIONID}/code`);
     }
-    if (status === 'step_scoring') {
-      setText('Continue registration');
-      setLink(`loan/${APPLICATIONID}/document`);
-    }
-    if (status === 'step_payment') {
-      setText('Continue registration');
-      setLink(`loan/${APPLICATIONID}/document/sign`);
-    }
-    if (status === ('step_signing' || 'step_code')) {
-      setText('Continue registration');
-      setLink(`loan/${APPLICATIONID}/code`);
-    }
+  }
+
+  useEffect(() => {
+    setBtnStatus();
   }, []);
 
   return (

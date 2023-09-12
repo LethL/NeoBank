@@ -56,22 +56,19 @@ export default function Table() {
     } else {
       setData(
         [...paymentScheduleData].sort((a, b) => {
-          if (column === 'number') {
-            return b.number - a.number;
-          }
-          if (column === 'debtPayment') {
-            return b.debtPayment - a.debtPayment;
-          }
-          if (column === 'interestPayment') {
-            return b.interestPayment - a.interestPayment;
-          }
-          if (column === 'totalPayment') {
-            return b.totalPayment - a.totalPayment;
-          }
-          if (column === 'remainingDebt') {
-            return b.remainingDebt - a.remainingDebt;
-          } else {
-            return b.date.localeCompare(a.date);
+          switch (column) {
+            case 'number':
+              return b.number - a.number;
+            case 'date':
+              return b.debtPayment - a.debtPayment;
+            case 'debtPayment':
+              return b.interestPayment - a.interestPayment;
+            case 'interestPayment':
+              return b.interestPayment - a.interestPayment;
+            case 'totalPayment':
+              return b.totalPayment - a.totalPayment;
+            case 'remainingDebt':
+              return b.remainingDebt - a.remainingDebt;
           }
         })
       );
