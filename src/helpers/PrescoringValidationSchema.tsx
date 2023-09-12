@@ -13,6 +13,6 @@ export const PrescoringValidationSchema = Yup.object({}).shape({
     .required('Enter your passport number')
     .min(6, 'The series must be 6 digits')
     .max(6, 'The series must be 6 digits'),
-  term: Yup.string(),
+  term: Yup.number(),
   amount: Yup.number(),
 });

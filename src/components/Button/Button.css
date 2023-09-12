@@ -1,0 +1,36 @@
+.btn {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 3px 20px;
+  color: var(--white-color);
+}
+
+.btn_small {
+  width: 96px;
+}
+
+.btn_medium {
+  width: 126px;
+}
+
+.btn_big {
+  width: 160px;
+}
+
+.btn_blue {
+  background-color: #003cff;
+}
+
+.btn_red {
+  background-color: #d93737;
+}
+
+.btn_blue:hover {
+  background-color: #7796c0;
+  color: var(--white-color);
+}
+
+.btn_red:hover {
+  background-color: #d46363;
+  color: var(--white-color);
+}

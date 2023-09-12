@@ -1,0 +1,18 @@
+.congratulations {
+  padding: 40px 0 95px;
+  text-align: center;
+}
+
+.congratulations__title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 44px;
+  color: #1c1c1e;
+  margin: 32px 0;
+}
+
+.congratulations__text {
+  margin: 0 0 32px;
+  color: #4f5665;
+  line-height: 23px;
+}

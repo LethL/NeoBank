@@ -1,0 +1,51 @@
+.offers-card {
+  background-color: var(--white-color);
+  border-radius: 28px;
+  box-shadow: 0px 0px 8px 0px #00000014;
+  padding: 32px;
+  text-align: center;
+  width: 295px;
+  box-sizing: border-box;
+}
+
+.offers-card__img {
+  margin-bottom: 32px;
+}
+
+.offers-card__text {
+  margin: 0 0 14px;
+  color: #1c1c1e;
+}
+
+.offers-card__wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.offers-card__logo {
+  position: relative;
+  top: 3px;
+  left: 8px;
+}
+
+.offers-card__btn {
+  display: inline-block;
+  font-weight: 700;
+  background-color: var(--blue-color);
+  border-radius: 8px;
+  padding: 8px 41px;
+  color: var(--white-color);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s linear;
+  border: none;
+  height: 48px;
+  max-width: 148px;
+  margin-top: 76px;
+}
+
+.offers-card__btn:hover {
+  background-color: #7796c0;
+  color: var(--white-color);
+}
