@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1694683148466" clover="3.2.0">
-  <project timestamp="1694683148466" name="All files">
-    <metrics statements="399" coveredstatements="276" conditionals="270" coveredconditionals="221" methods="124" coveredmethods="67" elements="793" coveredelements="564" complexity="0" loc="399" ncloc="399" packages="20" files="37" classes="37"/>
+<coverage generated="1694685624506" clover="3.2.0">
+  <project timestamp="1694685624506" name="All files">
+    <metrics statements="423" coveredstatements="298" conditionals="272" coveredconditionals="223" methods="130" coveredmethods="71" elements="825" coveredelements="592" complexity="0" loc="423" ncloc="423" packages="21" files="40" classes="40"/>
     <package name="components.Button">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="Button.css" path="C:\Users\carri\Desktop\NeoBank\src\components\Button\Button.css">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
       </file>
       <file name="Button.tsx" path="C:\Users\carri\Desktop\NeoBank\src\components\Button\Button.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="6" count="34" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="38" type="stmt"/>
       </file>
     </package>
     <package name="components.Loader">
@@ -75,15 +75,15 @@
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="SuccessText.css" path="C:\Users\carri\Desktop\NeoBank\src\components\SuccessText\SuccessText.css">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
       </file>
       <file name="SuccessText.tsx" path="C:\Users\carri\Desktop\NeoBank\src\components\SuccessText\SuccessText.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.TextField">
@@ -106,22 +106,22 @@
       <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
       <file name="applicationId.tsx" path="C:\Users\carri\Desktop\NeoBank\src\constants\applicationId.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="4" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="6" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="5" type="stmt"/>
       </file>
       <file name="paths.tsx" path="C:\Users\carri\Desktop\NeoBank\src\constants\paths.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
       </file>
     </package>
     <package name="helpers">
@@ -141,9 +141,9 @@
       <metrics statements="21" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="2"/>
       <file name="Application.agent.tsx" path="C:\Users\carri\Desktop\NeoBank\src\http\Application.agent.tsx">
         <metrics statements="18" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="1"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
@@ -158,22 +158,26 @@
         <line num="39" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="48" count="4" type="stmt"/>
+        <line num="48" count="5" type="stmt"/>
       </file>
       <file name="Basic.agent.ts" path="C:\Users\carri\Desktop\NeoBank\src\http\Basic.agent.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
       </file>
     </package>
     <package name="images">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="card-surprise.png" path="C:\Users\carri\Desktop\NeoBank\src\images\card-surprise.png">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
       <file name="close-icon.svg" path="C:\Users\carri\Desktop\NeoBank\src\images\close-icon.svg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="document-logo.svg" path="C:\Users\carri\Desktop\NeoBank\src\images\document-logo.svg">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
@@ -188,6 +192,38 @@
       <file name="slider.png" path="C:\Users\carri\Desktop\NeoBank\src\images\slider.png">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="modules.Document.components.Sign">
+      <metrics statements="23" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
+      <file name="Sign.css" path="C:\Users\carri\Desktop\NeoBank\src\modules\Document\components\Sign\Sign.css">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="Sign.tsx" path="C:\Users\carri\Desktop\NeoBank\src\modules\Document\components\Sign\Sign.tsx">
+        <metrics statements="20" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
       </file>
     </package>
     <package name="modules.Document.components.Table">
@@ -449,19 +485,19 @@
       <metrics statements="75" coveredstatements="22" conditionals="7" coveredconditionals="0" methods="20" coveredmethods="3"/>
       <file name="Loan.store.tsx" path="C:\Users\carri\Desktop\NeoBank\src\modules\Loan\store\Loan.store.tsx">
         <metrics statements="69" coveredstatements="17" conditionals="3" coveredconditionals="0" methods="18" coveredmethods="2"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
         <line num="16" count="7" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="31" count="4" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
@@ -472,7 +508,7 @@
         <line num="41" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="49" count="4" type="stmt"/>
+        <line num="49" count="5" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
@@ -482,17 +518,17 @@
         <line num="58" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="60" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
-        <line num="66" count="4" type="stmt"/>
+        <line num="66" count="5" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
         <line num="69" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
-        <line num="75" count="4" type="stmt"/>
+        <line num="75" count="5" type="stmt"/>
         <line num="76" count="0" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
         <line num="78" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
-        <line num="84" count="4" type="stmt"/>
+        <line num="84" count="5" type="stmt"/>
         <line num="85" count="0" type="stmt"/>
         <line num="86" count="0" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
@@ -502,31 +538,31 @@
         <line num="93" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="95" count="0" type="stmt"/>
         <line num="96" count="0" type="stmt"/>
-        <line num="101" count="4" type="stmt"/>
+        <line num="101" count="5" type="stmt"/>
         <line num="102" count="0" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
         <line num="106" count="0" type="stmt"/>
-        <line num="110" count="4" type="stmt"/>
+        <line num="110" count="5" type="stmt"/>
         <line num="111" count="0" type="stmt"/>
         <line num="112" count="0" type="stmt"/>
         <line num="113" count="0" type="stmt"/>
         <line num="115" count="0" type="stmt"/>
-        <line num="119" count="4" type="stmt"/>
+        <line num="119" count="5" type="stmt"/>
         <line num="120" count="0" type="stmt"/>
         <line num="121" count="0" type="stmt"/>
         <line num="122" count="0" type="stmt"/>
         <line num="124" count="0" type="stmt"/>
-        <line num="129" count="4" type="stmt"/>
+        <line num="129" count="5" type="stmt"/>
       </file>
       <file name="PrescoringResponse.store.tsx" path="C:\Users\carri\Desktop\NeoBank\src\modules\Loan\store\PrescoringResponse.store.tsx">
         <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
         <line num="12" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
       </file>
     </package>
     <package name="modules.Offers">

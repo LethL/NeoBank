@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Sign.css';
-import documentLogo from 'src/images/document-logo.svg';
-import Button from 'components/Button/Button';
-import SuccessText from 'components/SuccessText/SuccessText';
-import { LoanStore } from 'modules/Loan/store/Loan.store';
+import documentLogo from '../../../../images/document-logo.svg';
+import Button from '../../../../components/Button/Button';
+import SuccessText from '../../../../components/SuccessText/SuccessText';
+import { LoanStore } from '../../../../modules/Loan/store/Loan.store';
 
 export default function Sign() {
   const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('status'));
@@ -37,7 +37,7 @@ export default function Sign() {
           text="Within 10 minutes you will be sent a PIN code to your email for confirmation"
         />
       ) : (
-        <section className="sign">
+        <section className="sign" data-testid="sign">
           <div className="sign__header">
             <h2 className="sign__title">Signing of documents</h2>
             <span className="sign__title-info">Step 4 of 5</span>
@@ -56,7 +56,7 @@ export default function Sign() {
             href="https://neostudy.neoflex.ru/pluginfile.php/108672/mod_assign/intro/credit-card-offer.pdf"
             rel="noreferrer">
             <img src={documentLogo} alt="document logo" />
-            <p>Information on your card</p>
+            Information on your card
           </a>
           <div className="sign__btns">
             <label className="table__ckeckbox">
