@@ -16,7 +16,7 @@ export default function SelectField({
       <label htmlFor={label} className={labelClassName}>
         {label}
       </label>
-      <select className={selectClassName} onClick={onChange}>
+      <select className={selectClassName} onClick={onChange} id={label}>
         {options?.map((option) => (
           <option key={option.title} value={option.value}>
             {option.title}
