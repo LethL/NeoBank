@@ -1,9 +1,9 @@
 import React from 'react';
+import yesLogo from '../../../../images/ok-logo.svg';
+import noLogo from '../../../..//images/fail-logo.svg';
+import { LoanStore } from '../../../../modules/Loan/store/Loan.store';
 import { OffersDataProps } from './OffersCard.types';
-import yesLogo from 'src/images/ok-logo.svg';
-import noLogo from 'src/images/fail-logo.svg';
 import './OffersCard.css';
-import { LoanStore } from 'modules/Loan/store/Loan.store';
 
 export default function OffersCard({
   cardLogo,
@@ -19,7 +19,7 @@ export default function OffersCard({
 }: OffersDataProps) {
   const { handleOfferSend } = LoanStore;
   return (
-    <div className="offers-card">
+    <div className="offers-card" data-testid="offersCard" data-applicationid={applicationId} data-rate={rate}>
       <img src={cardLogo} alt={cardLogoAlt} className="offers-card__img" />
       <p className="offers-card__text">Requested amount: {requestedAmount} ₽</p>
       <p className="offers-card__text">Total amount: {totalAmount} ₽</p>
