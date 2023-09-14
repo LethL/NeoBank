@@ -1,8 +1,8 @@
+import { APPLICATIONID } from '../constants/paths';
 import { BasicAgent } from './Basic.agent';
 import { OffersDataProps } from 'modules/Offers/components/OffersCard/OffersCard.types';
 import { PrescoringFormEntity } from 'domains/PrescoringForm.entity';
 import { ScoringFormEntity } from 'domains/ScoringForm.entity';
-import { APPLICATIONID } from 'constants/paths';
 
 class ApplicationAgent extends BasicAgent {
   constructor() {
