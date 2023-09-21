@@ -39,6 +39,8 @@ export default function NewsList() {
     await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`, {
       method: 'GET',
       headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
         'X-Api-Key': newsApiKey,
         Authorization: newsApiKey,
       },
