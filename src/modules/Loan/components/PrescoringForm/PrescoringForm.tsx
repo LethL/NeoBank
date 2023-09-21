@@ -11,9 +11,9 @@ import SelectField from '../../../../components/SelectField/SelectField';
 import { PrescoringFormEntity } from '../../../../domains/PrescoringForm.entity';
 import { PrescoringValidationSchema } from '../../../../helpers/PrescoringValidationSchema';
 import { DEFAULT_VALUES } from '../Form/Form.utils';
-import { Loader } from 'components/Loader/Loader';
-import { LoanStore } from 'modules/Loan/store/Loan.store';
-import { prescoringTermsOptions } from 'src/__mocks__/FormSelect.mock';
+import { Loader } from '../../../../components/Loader/Loader';
+import { LoanStore } from '../../../../modules/Loan/store/Loan.store';
+import { prescoringTermsOptions } from '../../../../__mocks__/FormSelect.mock';
 
 function PrescoringFormProto() {
   const { handlePrescoringSend, loading } = LoanStore;
@@ -68,7 +68,7 @@ function PrescoringFormProto() {
   return (
     <section className="form-section">
       <Loader isLoading={loading}>
-        <form className="form" onSubmit={handleSubmit(onSubmit)} id="form">
+        <form className="form" onSubmit={handleSubmit(onSubmit)} id="form" data-testid="prescoringForm">
           <div className="form__column">
             <div>
               <div className="form__wrapper">

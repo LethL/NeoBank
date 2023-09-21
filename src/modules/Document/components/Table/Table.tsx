@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Table.css';
-import { LoanStore } from 'modules/Loan/store/Loan.store';
+import { LoanStore } from '../../../../modules/Loan/store/Loan.store';
+import ModalPopup from '../../../../components/Modal/Modal';
+import Button from '../../../../components/Button/Button';
+import SuccessText from '../../../../components/SuccessText/SuccessText';
 import { PaymentScheduleEntity } from 'domains/PaymentSchedule.entity';
-import ModalPopup from 'components/Modal/Modal';
-import Button from 'components/Button/Button';
-import SuccessText from 'components/SuccessText/SuccessText';
 
 export default function Table() {
   const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('status'));

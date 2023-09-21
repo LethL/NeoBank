@@ -3,21 +3,21 @@ import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FormBtn from '../FormBtn/FormBtn';
 import { DEFAULT_VALUES_SCORING } from '../Form/Form.utils';
-import { Loader } from 'components/Loader/Loader';
-import { LoanStore } from 'modules/Loan/store/Loan.store';
-import { ScoringFormEntity } from 'domains/ScoringForm.entity';
-import { ScoringValidationSchema } from 'helpers/ScoringValidationSchema';
-import '../Form/Form.css';
-import '../FormItem/FormItem.css';
-import SelectField from 'components/SelectField/SelectField';
+import { Loader } from '../../../../components/Loader/Loader';
+import { LoanStore } from '../../../../modules/Loan/store/Loan.store';
+import { TextField } from '../../../../components/TextField/TextField';
+import SelectField from '../../../../components/SelectField/SelectField';
 import {
   dependentSelectOptions,
   employmentStatusSelectOptions,
   genderSelectOptions,
   martialSelectOptions,
   positionSelectOptions,
-} from '__mocks__/FormSelect.mock';
-import { TextField } from 'components/TextField/TextField';
+} from '../../../../__mocks__/FormSelect.mock';
+import { ScoringValidationSchema } from '../../../../helpers/ScoringValidationSchema';
+import { ScoringFormEntity } from 'domains/ScoringForm.entity';
+import '../Form/Form.css';
+import '../FormItem/FormItem.css';
 
 export default function ScoringForm() {
   const { loading, handleScoringFormSend } = LoanStore;
@@ -84,7 +84,7 @@ export default function ScoringForm() {
   return (
     <section className="form-section">
       <Loader isLoading={loading}>
-        <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="form" onSubmit={handleSubmit(onSubmit)} data-testid="scoringForm">
           <div className="form__column">
             <div>
               <div className="form__wrapper">

@@ -1,7 +1,7 @@
 import React from 'react';
+import cardLogo from '../../images/card-surprise.png';
 import OffersCard from './components/OffersCard/OffersCard';
 import { OffersDataProps } from './components/OffersCard/OffersCard.types';
-import cardLogo from 'src/images/card-surprise.png';
 import './components/OffersList/OffersList.css';
 
 export default function Offers() {

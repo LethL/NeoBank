@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
+import { ApplicationAgentRequest } from '../../../http/Application.agent';
 import dataStore from './PrescoringResponse.store';
 import { PrescoringFormEntity } from 'domains/PrescoringForm.entity';
-import { ApplicationAgentRequest } from 'http/Application.agent';
 import { ScoringFormEntity } from 'domains/ScoringForm.entity';
 import { OffersDataProps } from 'modules/Offers/components/OffersCard/OffersCard.types';
 

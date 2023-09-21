@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
+import Button from '../../components/Button/Button';
+import closeLogo from '../../images/close-icon.svg';
 import { ModalProps } from './Modal.types';
-import Button from 'components/Button/Button';
 import './Modal.css';
-import closeLogo from 'src/images/close-icon.svg';
 
 export default function ModalPopup({ isOpen, onClose }: ModalProps) {
-  const history = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {
@@ -20,7 +18,7 @@ export default function ModalPopup({ isOpen, onClose }: ModalProps) {
   };
 
   const handleDoneApp = () => {
-    history('/');
+    window.location.href = '/';
     localStorage.clear();
   };
 

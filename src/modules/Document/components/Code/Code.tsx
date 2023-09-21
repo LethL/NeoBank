@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Code.css';
 import ReactCodeInput from 'react-code-input';
+import Button from '../../../../components/Button/Button';
+import { LoanStore } from '../../../../modules/Loan/store/Loan.store';
+import Congratulations from '../../../../components/Congratulations/Congratulations';
 import { props } from './Code.props';
-import Button from 'components/Button/Button';
-import { LoanStore } from 'modules/Loan/store/Loan.store';
-import Congratulations from 'components/Congratulations/Congratulations';
 
 export default function Code() {
   const [stepStorageValue, setStepStorageValue] = useState<string | null>(localStorage.getItem('status'));
@@ -50,7 +50,7 @@ export default function Code() {
       {stepStorageValue === 'step_code' ? (
         <Congratulations />
       ) : (
-        <section className="code">
+        <section className="code" data-testid="code">
           <h2 className="code__title">Please enter confirmation code</h2>
           <ReactCodeInput
             value={pinCode}
