@@ -1,10 +1,14 @@
-# React neoBank project
+# React online-bank project
+
+Онлайн-банк с получением актуальных курсов валют, новостей, подачи заявки на кредитную карту.
+
+Деплой https://lethl.github.io/NeoBank/
 
 npm i --force, npm run dev - запустить проект
 
 ## Технологии которые используются в проекте
 
-React, React-router-dom, Typescript, React Hook Form, Yup
+React, React-router-dom, Typescript, MobX, React Testing Library, Axios, React Hook Form, Yup
 Webpack, eslint, prettier
 
 ## Структура шаблона
