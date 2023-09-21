@@ -1,0 +1,19 @@
+.decision {
+  text-align: center;
+  border: 1px solid #5b35d5;
+  border-radius: 10px;
+  padding: 24px 0 34px;
+  margin-bottom: 96px;
+}
+
+.decision__title {
+  font-size: 30px;
+  line-height: 33px;
+  color: #1c1c1e;
+  margin: 0 0 32px;
+}
+
+.decision__text {
+  color: #4f5665;
+  margin: 0;
+}

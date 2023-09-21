@@ -28,7 +28,7 @@ const devWebpackConfig = merge(BaseConfig, {
     devMiddleware: {
       publicPath: publicUrlOrPath.slice(0, -1),
     },
-    port: 8080,
+    port: 8088,
     historyApiFallback: {
       disableDotRule: true,
       index: publicUrlOrPath,
@@ -51,7 +51,7 @@ const devWebpackConfig = merge(BaseConfig, {
       {
         host: 'localhost',
         port: 3000,
-        proxy: 'http://localhost:8080/',
+        proxy: 'http://localhost:8088/',
         notify: false,
         https: false,
       },
